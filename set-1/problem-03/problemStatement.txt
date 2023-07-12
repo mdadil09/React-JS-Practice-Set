@@ -1,0 +1,2 @@
+Build a React component to display a list of stationery items with a header. 
+The items and header should be passed as props. Header should be “Stationery Items”.
