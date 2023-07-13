@@ -1,0 +1,9 @@
+1. Create a React component called Greeting that receives a name prop and displays a message like "Hello, name!" on the DOM.
+
+2. Build a Product component that receives product name and price as props and displays them on DOM.
+    - The name should be in bold and blue in color
+    - Price should be in italics and green in color
+
+3. Build a React component called UserProfile that receives an object representing a user as prop and display the details on the DOM.
+
+4. Build a React component called Gadgets that receives an array of products as a prop. Render each product's name, description, and price as an ordered list. Add a border around the product details which has price above 50000.

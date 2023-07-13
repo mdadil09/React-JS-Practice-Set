@@ -1,0 +1,9 @@
+.App{
+  text-align: center;
+  font-family: sans-serif;
+}
+hr{
+  margin-right: 40px;
+  margin-left: 40px;
+  border: 3px solid black;
+}
