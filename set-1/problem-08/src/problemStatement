@@ -1,0 +1,5 @@
+Build a React component to display all the employee details as unordered list on the DOM in the following format:
+    
+    `name: name, level: level, dept: dept, designation: designation, salary: salary`
+    
+    No need to pass as props.
