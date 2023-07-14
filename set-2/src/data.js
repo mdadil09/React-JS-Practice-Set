@@ -49,3 +49,40 @@ export const heading = "About Me";
 export const name = "Mohammad Adil"; // you can put your name
 export const learning =
   "I am learning React JS and i would like to collabrate and learn React JS.";
+
+export const red = "#EE4B2B";
+export const blue = "#89CFF0";
+export const green = "#7FFFD4";
+
+export const todoItems = [
+  {
+    id: 1,
+    title: "Complete practice set",
+    description: "Practice set 1 of React",
+    isCompleted: true,
+  },
+  {
+    id: 2,
+    title: "Attend revision session",
+    description: "Revision session of React",
+    isCompleted: false,
+  },
+  {
+    id: 3,
+    title: "Watch recording",
+    description: "Live session recording of React",
+    isCompleted: true,
+  },
+  {
+    id: 4,
+    title: "Attend DSH",
+    description: "Doubt Solving Hours of React",
+    isCompleted: false,
+  },
+  {
+    id: 5,
+    title: "Complete practice set",
+    description: "Practice set 2 of React",
+    isCompleted: false,
+  },
+];

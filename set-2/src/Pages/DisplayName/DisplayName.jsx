@@ -7,12 +7,11 @@ const DisplayName = ({ name }) => {
       style={{
         padding: "60px",
         fontSize: "40px",
-        color: "green",
         textAlign: "center",
       }}
     >
       <h1>Greeting</h1>
-      <p>Hello, {name}!</p>
+      <p style={{ color: "green" }}>Hello, {name}!</p>
     </div>
   );
 };

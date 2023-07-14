@@ -12,7 +12,7 @@ const GadgetsData = ({ products }) => {
           <li
             key={id}
             style={{
-              border: price > 50000 ? "3px solid green" : null,
+              border: price > 50000 ? "4px solid darkgreen" : null,
               padding: "10px",
             }}
           >
