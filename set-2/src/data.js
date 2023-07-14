@@ -32,4 +32,20 @@ export const products = [
     price: 1500,
   },
   { id: 7, name: "mobile", description: "iPhone 12", price: 90000 },
+  {
+    id: 8,
+    name: "speakers",
+    description: "Bose L1 Pro32 Portable",
+    price: 26000,
+  },
+  { id: 9, name: "mobile", description: "iPhone 14", price: 100000 },
 ];
+
+export const title = "React is awesome";
+export const content =
+  "React is a JavaScript library for building user interfaces.";
+
+export const heading = "About Me";
+export const name = "Mohammad Adil"; // you can put your name
+export const learning =
+  "I am learning React JS and i would like to collabrate and learn React JS.";
