@@ -1,1 +1,6 @@
 1. Given an array of characters, build a Tab component in React that shows the name of characters on click of two buttons, one for heroes and other for villains. On click of “Show Heroes” button, a list of heroes should be displayed and on click of “Show Villains” button, a list of villains should be displayed on the DOM. Use useState Hook.
+2. Build a React component with two buttons + and - which increases/decreases the font size of a heading text “Welcome” by 1px. Keep the initial font size to 18px. Use useState Hook.
+3. Given an array of items:
+    a. Build a React component that displays a list of items. Display fruits in orange color and vegetables in green color.
+    b. Create two buttons to filter the items by their category using the useState hook.
+    

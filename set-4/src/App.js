@@ -1,6 +1,8 @@
 import "./App.css";
+import DisplayVegetable from "./Pages/DisplayVegetable/DisplayVegetable";
 import HeroAndVillian from "./Pages/HeroAndVillian/HeroAndVillian";
-import { characters } from "./data";
+import MagnifyText from "./Pages/MagnifyText/MagnifyText";
+import { characters, itemList } from "./data";
 
 function App() {
   return (
@@ -9,6 +11,9 @@ function App() {
       <hr />
       <HeroAndVillian characters={characters} />
       <hr />
+      <MagnifyText />
+      <hr />
+      <DisplayVegetable itemList={itemList} />
     </div>
   );
 }
