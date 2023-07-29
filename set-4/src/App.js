@@ -3,7 +3,8 @@ import DisplayVegetable from "./Pages/DisplayVegetable/DisplayVegetable";
 import HeroAndVillian from "./Pages/HeroAndVillian/HeroAndVillian";
 import MagnifyText from "./Pages/MagnifyText/MagnifyText";
 import ToDoList from "./Pages/ToDoList/ToDoList";
-import { characters, itemList, todoItems } from "./data";
+import ToDoList1 from "./Pages/ToDoList/TodoListNew";
+import { characters, itemList, todoItems, todoItems1 } from "./data";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <DisplayVegetable itemList={itemList} />
       <hr />
       <ToDoList todoItems={todoItems} />
+      <hr />
+      <ToDoList1 todoItems1={todoItems1} />
     </div>
   );
 }
