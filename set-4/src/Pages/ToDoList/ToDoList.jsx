@@ -11,7 +11,7 @@ const ToDoList = ({ todoItems }) => {
   return (
     <div className="container" style={{ padding: "60px", fontSize: "40px" }}>
       <h1>Todo List</h1>
-      <ul>
+      <ul style={{ listStyle: "none" }}>
         {todo.map((item) => (
           <li
             style={{
