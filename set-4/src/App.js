@@ -1,10 +1,11 @@
 import "./App.css";
+import Books from "./Pages/Books/Books";
 import DisplayVegetable from "./Pages/DisplayVegetable/DisplayVegetable";
 import HeroAndVillian from "./Pages/HeroAndVillian/HeroAndVillian";
 import MagnifyText from "./Pages/MagnifyText/MagnifyText";
 import ToDoList from "./Pages/ToDoList/ToDoList";
 import ToDoList1 from "./Pages/ToDoList/TodoListNew";
-import { characters, itemList, todoItems, todoItems1 } from "./data";
+import { books, characters, itemList, todoItems, todoItems1 } from "./data";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <ToDoList todoItems={todoItems} />
       <hr />
       <ToDoList1 todoItems1={todoItems1} />
+      <hr />
+      <Books books={books} />
     </div>
   );
 }

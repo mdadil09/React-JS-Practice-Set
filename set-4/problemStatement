@@ -13,3 +13,5 @@
 6. Given an array of books:
     a. Build a React component that displays the title and author of each book.
     b. Add buttons to filter the books by genre using the useState hook.
+
+7. Build a game component in React where the player has a certain number of lives. Display the current number of lives and allows the player to decrement the number of lives by one with a button click. Once the number of lives reaches zero, display a "Game Over" message.
