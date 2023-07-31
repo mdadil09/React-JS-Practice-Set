@@ -4,5 +4,12 @@
     a. Build a React component that displays a list of items. Display fruits in orange color and vegetables in green color.
     b. Create two buttons to filter the items by their category using the useState hook.
 4. Given an array of todoItems:
-    a. Build a React component that takes the todoItems as props and list all the todo tasks. b. if isDone is true then show the item with a strikethrough.
+    a. Build a React component that takes the todoItems as props and list all the todo tasks. b. if isDone is True then show the item with a strikethrough.
     b. Add a X button against each item and remove that task from the list on click of the button.
+5. Given an array of todoItems:
+    a. Build a React component that takes the todoItems as props and list all the todo tasks.
+    b. Add a "Mark as Done" button against each item and toggle isDone property value between true and false on click of the button. If isDone is true change the color of that task to red with a strikethrough and if it is false remove the strikethrough and the red color.
+
+6. Given an array of books:
+    a. Build a React component that displays the title and author of each book.
+    b. Add buttons to filter the books by genre using the useState hook.
