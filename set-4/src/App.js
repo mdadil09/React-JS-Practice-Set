@@ -2,6 +2,7 @@ import "./App.css";
 import Books from "./Pages/Books/Books";
 import DisplayVegetable from "./Pages/DisplayVegetable/DisplayVegetable";
 import HeroAndVillian from "./Pages/HeroAndVillian/HeroAndVillian";
+import Lives from "./Pages/Lives/Lives";
 import MagnifyText from "./Pages/MagnifyText/MagnifyText";
 import ToDoList from "./Pages/ToDoList/ToDoList";
 import ToDoList1 from "./Pages/ToDoList/TodoListNew";
@@ -23,6 +24,8 @@ function App() {
       <ToDoList1 todoItems1={todoItems1} />
       <hr />
       <Books books={books} />
+      <hr />
+      <Lives />
     </div>
   );
 }
