@@ -1,0 +1,6 @@
+1. Create a React component where all the users are fetched using fake fetch and listed on the DOM. Show the online users in green color and the offline users in red color.
+
+2. Create a React component that fetches products data from an API endpoint using `useEffect` hook and display products (name, price, quantity) as a list on the screen using the `useState` hook.
+    
+    a. Add a button, on click of which it displays only the items with more than 20 as quantity.
+    b. In the above question after you have listed all the items, add a button which says “Filter by Price”. On click of the button, display only the items with price less than 100.
