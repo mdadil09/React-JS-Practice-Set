@@ -4,3 +4,15 @@
     
     a. Add a button, on click of which it displays only the items with more than 20 as quantity.
     b. In the above question after you have listed all the items, add a button which says “Filter by Price”. On click of the button, display only the items with price less than 100.
+
+3. Create a React component that fetches a user’s data from an API endpoint using useEffect hook and displays the data (name, image, likes, comments) on the screen using the useState hook. Pass heading (”User Profile”) and width and height for image as props to the component.
+
+4. Create a React component that fetches users data from an API endpoint using `useEffect` hook and display users data (name, image, likes, comments) as a list on the screen using the `useState` hook.
+    
+    a. Show “Loading…” until your data displays on the DOM.
+    
+    b. Handle errors by showing an error message on the DOM, in case of any error.
+
+5. Create a React component that fetches chat data from an API endpoint using `useEffect` hook and display chat data (name and chat message) as a list on the screen using the `useState` hook.
+    
+    a. Show “Loading Chats…” until your data displays on the DOM.    
