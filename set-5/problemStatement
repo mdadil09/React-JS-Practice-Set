@@ -15,4 +15,12 @@
 
 5. Create a React component that fetches chat data from an API endpoint using `useEffect` hook and display chat data (name and chat message) as a list on the screen using the `useState` hook.
     
-    a. Show “Loading Chats…” until your data displays on the DOM.    
+    a. Show “Loading Chats…” until your data displays on the DOM.
+
+6. Create a React component called Comments.
+    
+    a. Fetch the comments using thefake fetch and list the data on DOM.
+    
+    b. Each comment component will have the text, user’s name and a delete button.
+    
+    c. On click of the delete button, that particular comment object should be deleted and should not be visible on the DOM.        

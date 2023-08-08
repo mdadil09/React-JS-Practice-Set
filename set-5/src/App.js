@@ -1,6 +1,7 @@
 import "./App.css";
 import ChatData from "./Pages/ChatData/ChatData";
 import Products from "./Pages/Products/Products";
+import UserComments from "./Pages/UserComments/UserComments";
 import UserFeed from "./Pages/UserFeed/UserFeed";
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import UserStatus from "./Pages/UsersStatus/UserStatus";
@@ -19,6 +20,8 @@ function App() {
       <UserFeed />
       <hr />
       <ChatData />
+      <hr />
+      <UserComments />
     </div>
   );
 }
