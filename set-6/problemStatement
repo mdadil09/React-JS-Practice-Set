@@ -1,0 +1,5 @@
+1. Create a React component that calls the product api and has the same number of buttons as the items in product. On Click of each button show the details of that card only. 
+    
+    **Example:** In the below API we have three products and three buttons.
+
+2. Create a React component that calls the todo api and display the todos in an unordered list and show the todos as a list. The todo should display a heading with a little description of what that todo is about. Under that, it should display all the tasks to be done as a list.
