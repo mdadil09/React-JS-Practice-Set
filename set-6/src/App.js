@@ -1,7 +1,11 @@
 import "./App.css";
 import HabitTracker from "./Pages/HabitTracker/HabitTracker";
+import HabitUnarchieved from "./Pages/HabitUnarchieved/HabitUnarchieved";
 import ProductCart from "./Pages/ProductCart/ProductCart";
+import Projects from "./Pages/Projects/Projects";
+import SocialMedia from "./Pages/SocialMedia/SocialMedia";
 import Todo from "./Pages/Todo/Todo";
+import VideoLibrary from "./Pages/VideoLibrary/VideoLibrary";
 
 function App() {
   return (
@@ -12,6 +16,14 @@ function App() {
       <hr />
       <Todo />
       <HabitTracker />
+      <hr />
+      <VideoLibrary />
+      <hr />
+      <SocialMedia />
+      <hr />
+      <HabitUnarchieved />
+      <hr />
+      <Projects />
     </div>
   );
 }
