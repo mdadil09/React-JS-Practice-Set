@@ -28,11 +28,12 @@ const Todo = () => {
             {todo.title}: {todo.desc}
           </h2>
           <div>
-            <ol>
+            <ol style={{ margin: "40px" }}>
               {todo.todos.map((i) => (
-                <li>{i}</li>
+                <li style={{ padding: "10px" }}>{i}</li>
               ))}
             </ol>
+            <hr style={{ border: "2px solid gray" }} />
           </div>
         </div>
       ))}
