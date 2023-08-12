@@ -5,6 +5,7 @@ import ProductCart from "./Pages/ProductCart/ProductCart";
 import Projects from "./Pages/Projects/Projects";
 import SocialMedia from "./Pages/SocialMedia/SocialMedia";
 import Todo from "./Pages/Todo/Todo";
+import UserProfile from "./Pages/UserProfile/UserProfile";
 import VideoLibrary from "./Pages/VideoLibrary/VideoLibrary";
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
       <HabitUnarchieved />
       <hr />
       <Projects />
+      <hr />
+      <UserProfile />
     </div>
   );
 }
