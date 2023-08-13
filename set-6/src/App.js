@@ -5,7 +5,9 @@ import ProductCart from "./Pages/ProductCart/ProductCart";
 import Projects from "./Pages/Projects/Projects";
 import SocialMedia from "./Pages/SocialMedia/SocialMedia";
 import Todo from "./Pages/Todo/Todo";
+import UpdateProfile from "./Pages/UpdateProfile/UpdateProfile";
 import UserProfile from "./Pages/UserProfile/UserProfile";
+import VideoLabel from "./Pages/VideoLabel/VideoLabel";
 import VideoLibrary from "./Pages/VideoLibrary/VideoLibrary";
 
 function App() {
@@ -27,6 +29,10 @@ function App() {
       <Projects />
       <hr />
       <UserProfile />
+      <hr />
+      <VideoLabel />
+      <hr />
+      <UpdateProfile />
     </div>
   );
 }
