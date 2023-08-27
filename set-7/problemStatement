@@ -2,3 +2,5 @@
    hook and displays the current temperature, humidity, and wind speed on the screen using
    the useState hook. Add a button which toggles between Celsius and Fahrenheit units for 
    the temperature.
+
+2. Create a React component that fetches user data from an API endpoint using **`useEffect`** hook and displays the user's name, email, and phone number on the screen using the **`useState`** hook. Add a button which toggles the display of the user's address (street, suite, city, zipcode). 

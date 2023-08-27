@@ -1,4 +1,5 @@
 import "./App.css";
+import UserData from "./components/UserData/UserData";
 import WeatherData from "./components/WeatherData/WeatherData";
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
       </h1>
       <hr />
       <WeatherData />
+      <hr />
+      <UserData />
     </div>
   );
 }
