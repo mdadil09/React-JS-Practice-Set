@@ -4,3 +4,5 @@
    the temperature.
 
 2. Create a React component that fetches user data from an API endpoint using **`useEffect`** hook and displays the user's name, email, and phone number on the screen using the **`useState`** hook. Add a button which toggles the display of the user's address (street, suite, city, zipcode). 
+
+3. Create a React component that fetches a list of movies from an API endpoint using useEffect hook and displays the title, year, and rating of each movie on the screen using the useState hook. Add a dropdown which filters the movies by year. You can keep 5 dropdown values - 2005 to 2010.
