@@ -2,6 +2,7 @@ import "./App.css";
 import EcommerceSort from "./components/Ecommerce/EcommerceSort";
 import Movies from "./components/Movies/Movies";
 import MoviesList from "./components/MoviesList/MoviesList";
+import SearchBar from "./components/ProductData/SearchBar";
 import SortByRating from "./components/ProductData/SortByRating";
 import Quotes from "./components/Quotes/Quotes";
 import UserData from "./components/UserData/UserData";
@@ -30,6 +31,8 @@ function App() {
       <EcommerceSort />
       <hr />
       <SortByRating />
+      <hr />
+      <SearchBar />
     </div>
   );
 }

@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fakeFetch } from "./api";
 
 const SortByRating = () => {
-  const [showProducts, setShowProducts] = useState([
-    {
-      query: "",
-      lists: [],
-    },
-  ]);
+  const [showProducts, setShowProducts] = useState([]);
 
   const getProducts = async () => {
     try {
@@ -22,14 +17,6 @@ const SortByRating = () => {
     setShowProducts([...showProducts].sort((a, b) => b.rating - a.rating));
   };
 
-  const handleChange = (e) => {
-    const filteredItem = showProducts.filter(({ name }) => {
-      if (e.target.value === "") return showProducts;
-      return name.toLowerCase().includes(e.target.value.toLowerCase());
-    });
-    setShowProducts(filteredItem);
-  };
-
   useEffect(() => {
     getProducts();
   }, []);
@@ -42,14 +29,7 @@ const SortByRating = () => {
       >
         Sort By Rating
       </button>
-      <input
-        style={{ padding: "10px", fontSize: "40px", marginLeft: "20px" }}
-        type="text"
-        placeholder="Search..."
-        onChange={handleChange}
-        value={showProducts.query}
-      ></input>
-      {showProducts.map(({ id, name, price, quantity, rating }) => (
+      {showProducts?.map(({ id, name, price, quantity, rating }) => (
         <div
           className="info"
           style={{
