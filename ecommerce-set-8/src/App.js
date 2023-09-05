@@ -5,6 +5,8 @@ import Category from "./Pages/Category";
 import Cart from "./Pages/Cart";
 import Wishlist from "./Pages/Wishlist";
 import ProductDetails from "./Pages/ProductDetails";
+import { useContext } from "react";
+import { CartContext } from ".";
 
 function App() {
   const getActiveStyle = ({ isActive }) => ({
@@ -13,6 +15,8 @@ function App() {
     padding: isActive ? "1rem" : "0.5rem",
     color: isActive ? "red" : "",
   });
+
+  const { cart } = useContext(CartContext);
   return (
     <div className="App">
       <nav className="nav">
@@ -28,6 +32,7 @@ function App() {
         <NavLink style={getActiveStyle} to="/wishlist">
           Wishlist
         </NavLink>
+        <h3>Item in cart: {cart.length}</h3>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

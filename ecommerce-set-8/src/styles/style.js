@@ -14,14 +14,22 @@ const Card = {
   marginBottom: "20px",
 };
 
-const Buttons = {
+const Links = {
   padding: "10px",
   width: "150px",
   textDecoration: "none",
 };
 
+const Buttons = {
+  padding: "10px",
+  marginRight: "10px",
+  width: "200px",
+  fontSize: "24px",
+};
+
 export const styles = {
   Container: Container,
   Card: Card,
+  Links: Links,
   Buttons: Buttons,
 };
