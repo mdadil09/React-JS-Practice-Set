@@ -4,12 +4,7 @@ import { fakeFetch } from "../api/api";
 export const TodoContext = createContext();
 
 export function TodoProvider({ children }) {
-  const [todo, setTodo] = useState([]);
   const [showTodo, setShowTodo] = useState([]);
-
-  const handleTodoUpdate = (item) => {
-    setTodo((todo) => [...todo, item]);
-  };
 
   const getData = async () => {
     try {
@@ -24,9 +19,7 @@ export function TodoProvider({ children }) {
     getData();
   }, []);
   return (
-    <TodoContext.Provider
-      value={{ showTodo, setShowTodo, todo, handleTodoUpdate }}
-    >
+    <TodoContext.Provider value={{ showTodo, setShowTodo }}>
       {children}
     </TodoContext.Provider>
   );

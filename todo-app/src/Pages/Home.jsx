@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { showTodo, setShowTodo, handleTodoUpdate } = useContext(TodoContext);
+  const { showTodo, setShowTodo } = useContext(TodoContext);
 
   const handleClick = (id) => {
     const doneItem = showTodo.map((item) => {
