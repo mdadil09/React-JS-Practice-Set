@@ -1,0 +1,95 @@
+.box{
+    margin: 100px auto;
+    width: 1400px;
+    height: 800px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: "Lucida Handwriting", cursive;
+}
+
+.link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 40px;
+    color: black;
+}
+
+.link a{
+    text-decoration: none;
+    color: black;
+}
+
+.link a:hover{
+    color: red;
+}
+
+.emailBox{
+    margin: 100px auto;
+    width: 1400px;
+    height: 1000px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); 
+}
+
+.emailContent{
+    padding: 20px;
+    font-size: 36px;
+}
+
+.header{
+    display: flex;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header p{
+    margin-right: 20px;
+}
+
+.send{
+    display: flex;
+}
+
+.send button:hover{
+    color: red;
+}
+
+.emailBox h3{
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 40px;
+}
+
+.singleBox{
+    margin: 100px auto;
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.singleContent{
+    padding: 20px;
+}
+
+.single ,p{
+    font-size: 36px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
