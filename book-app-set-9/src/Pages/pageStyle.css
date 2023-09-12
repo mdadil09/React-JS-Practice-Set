@@ -38,8 +38,17 @@ h1{
 }
 
 .buttons button{
-    font-size: 40px;
+    font-size: 32px;
     width: 300px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid green;
+    background-color: white;
+}
+
+.reButton button{
+    font-size: 32px;
+    width: 600px;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid green;

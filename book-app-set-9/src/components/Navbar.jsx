@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./navStyle.css";
+import { BookContext } from "../context/BookContext";
 
 const Navbar = () => {
+  const { favorite, showBook } = useContext(BookContext);
+  const filteredData = showBook.filter(({ read }) => read === true);
+
   return (
     <div className="navbar">
       <div className="nav-container">
@@ -13,10 +17,10 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/read">Read</NavLink>
+              <NavLink to="/read">Read{`(${filteredData.length})`}</NavLink>
             </li>
             <li>
-              <NavLink to="/favorite">Favorite</NavLink>
+              <NavLink to="/favorite">Favorite{`(${favorite.length})`}</NavLink>
             </li>
             <li>
               <NavLink to="/profile">Profile</NavLink>
