@@ -6,13 +6,13 @@
 .home-text{
     margin-top: 200px;
     width: 50%;
-    padding: 40px;
+    padding: 60px;
 }
 
 .home-text h1{
-    font-family: 'sans-serif';
+    font-family: 'Open Sans', sans-serif;
     font-size: 120px;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .img{
-    width: 40%;
+    width: 50%;
     padding-left: 40px;
 }
 
@@ -121,10 +121,105 @@ img{
     border-radius: 8px;
 }
 
+.cart{
+    margin-left: 400px;
+}
+
 .cart-container{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-wrap: wrap;
-    margin: 40px 200px;
+    margin: 40px auto;
+}
+
+.cart-main{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 200px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cart-container .cart-main .name{
+    margin-top: 10px;
+    margin-left: 200px;
+    font-size: 24px;
+    width: 30%;
+}
+
+.cart-container .cart-main .time{
+    margin-top: 30px;
+    margin-left: 300px;
+    font-size: 24px;
+    font-weight: 600;
+    width: 10%;
+}
+
+.cart-container .cart-main .price{
+    margin-top: 30px;
+    margin-left: 300px;
+    font-size: 24px;
+    font-weight: 600;
+    width: 10%;
+}
+
+.cart-container .cart-main .cart-button{
+    margin-top: 50px;
+    margin-left: 200px;
+    width: 10%;
+}
+
+.cart-container .cart-main .cart-button button{
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    background-color: #ff4500;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.cart .cart-total{
+    margin-left: 1600px;
+    margin-right: 700px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 20%;
+    font-size: 32px;
+}
+
+.cart .cart-total .totalPrice{
+    margin-left: 10px;
+    display: flex;
+}
+
+.cart .cart-total .tax{
+    margin-left: 10px;
+    display: flex;
+}
+
+.cart .cart-total .shipping{
+    margin-left: 10px;
+    display: flex;
+}
+
+.cart .cart-total .grand{
+    margin-left: 10px;
+    display: flex;
+}
+
+.cart .cart-total .cart-total-button{
+    display: flex;
+}
+.cart .cart-total .cart-total-button button{
+    width: 40%;
+    margin: 10px;
+    font-size: 32px;
+    color: white;
+    background-color: #ff4500;
+    padding: 8px;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 600;
 }

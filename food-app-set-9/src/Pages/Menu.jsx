@@ -1,29 +1,82 @@
 import React, { useContext } from "react";
 import { FoodContext } from "../context/FoodContext";
 import "./pageStyle.css";
+import { useState } from "react";
 
 const Menu = () => {
   const { food, handleCartUpdate } = useContext(FoodContext);
-  const veg = food.filter((item) => item.is_vegetarian === true);
-  const spicy = food.filter((item) => item.is_spicy === true);
+  const [isVegOpen, setIsVegOpen] = useState("");
+  const [sortOrder, setSortOrder] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const arr = ["Veg", "Spicy"];
+
+  const handleFood = (foodTaste) => {
+    setIsVegOpen(foodTaste);
+  };
+
+  const handleChange = (e) => {
+    handleFood(e.target.value);
+  };
+
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const sortedFoodItems = food.slice().sort((a, b) => {
+    if (sortOrder === "lowToHigh") {
+      return a.price - b.price;
+    } else if (sortOrder === "highToLow") {
+      return b.price - a.price;
+    }
+    return 0;
+  });
+
+  const veg = sortedFoodItems.filter((item) => {
+    if (isVegOpen === "all") {
+      return true; // Display all items
+    } else if (isVegOpen === "Veg") {
+      return item.is_vegetarian === true;
+    } else if (isVegOpen === "Spicy") {
+      return item.is_spicy === true;
+    }
+    return true;
+  });
+
+  const searchFilteredFoodItems = veg.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
       <div className="menu-search">
         <h1 style={{ fontSize: "40px", margin: 0 }}>Menu</h1>
-        <input type="text" placeholder="search..." />
-        <select name="Select">
-          <option>Select</option>
-          <option value={veg}>Veg</option>
-          <option value={spicy}>Spicy</option>
+        <input
+          type="text"
+          placeholder="search..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+        <select name="Select" onChange={handleChange}>
+          <option value="">All</option>
+          {arr.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
         </select>
-        <select name="Select">
-          <option>Sort by Price</option>
-          <option value="">Low to High</option>
-          <option value="">High to Low</option>
+        <select name="Select" onChange={handleSortChange}>
+          <option value="all">Sort by Price</option>
+          <option value="lowToHigh">Low to High</option>
+          <option value="highToLow">High to Low</option>
         </select>
       </div>
       <div className="menu-container">
-        {food.map((item) => {
+        {searchFilteredFoodItems.map((item) => {
           function handleCartClick() {
             handleCartUpdate(item);
           }

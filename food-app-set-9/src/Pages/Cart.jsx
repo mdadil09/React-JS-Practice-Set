@@ -3,32 +3,71 @@ import { FoodContext } from "../context/FoodContext";
 
 const Cart = () => {
   const { cart } = useContext(FoodContext);
+  const totalPrice = cart.reduce((total, item) => (total += item.price), 0);
+  const tax = totalPrice * (5 / 100);
+  const shipping = cart.length > 0 ? 15 : 0;
+
+  const grandTotal = totalPrice + tax + shipping;
+
   return (
-    <>
-      <h1 style={{ fontSize: "40px", marginLeft: "220px", marginTop: "100px" }}>
-        Cart
-      </h1>
+    <div className="cart">
+      <h1 style={{ fontSize: "40px", marginTop: "100px" }}>Cart</h1>
+      <hr style={{ marginRight: "550px" }} />
       <div className="cart-container">
         {cart.map((item) => {
           return (
-            <div className="card">
+            <div className="cart-main">
               <img
                 src={item.image}
                 alt="food"
-                style={{ width: "600px", height: "600px" }}
+                style={{
+                  marginTop: "25px",
+                  marginLeft: "25px",
+                  width: "200px",
+                  height: "150px",
+                }}
               />
-              <h1>{item.name}</h1>
-              <p className="price">${item.price}</p>
-              <p className="desc">{item.description}</p>
-              <p className="desc">{item.delivery_time} min</p>
-              <p style={{ margin: 0 }}>
-                <button style={{ margin: 0 }}>Remove from Cart</button>
-              </p>
+              <div className="name">
+                <h1 style={{ margin: 0 }}>{item.name}</h1>
+                <p style={{ margin: 0 }}>{item.description}</p>
+              </div>
+              <div className="time">
+                <p>{item.delivery_time} min</p>
+              </div>
+              <div className="price">
+                <p>${item.price}</p>
+              </div>
+              <div className="cart-button">
+                <button>Remove</button>
+              </div>
             </div>
           );
         })}
       </div>
-    </>
+      <div className="cart-total">
+        <div className="totalPrice">
+          <p style={{ width: "70%" }}>Total Price:</p>
+          <p>${totalPrice}</p>
+        </div>
+        <div className="tax">
+          <p style={{ width: "70%" }}>Tax:</p>
+          <p>${parseInt(tax)}</p>
+        </div>
+        <div className="shipping">
+          <p style={{ width: "70%" }}>Shipping:</p>
+          <p> ${shipping}</p>
+        </div>
+        <hr />
+        <div className="grand">
+          <p style={{ width: "70%" }}>Grand Total:</p>
+          <p>${parseInt(grandTotal)}</p>
+        </div>
+        <div className="cart-total-button">
+          <p style={{ width: "50%" }}></p>
+          <button>Checkout</button>
+        </div>
+      </div>
+    </div>
   );
 };
 
