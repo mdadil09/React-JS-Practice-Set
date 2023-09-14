@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./navStyle.css";
+import { FoodContext } from "../context/FoodContext";
 
 const Navbar = () => {
+  const { cart } = useContext(FoodContext);
   return (
     <nav className="navbar">
       <div className="container">
@@ -16,7 +18,7 @@ const Navbar = () => {
               <NavLink to="/menu">Menu</NavLink>
             </li>
             <li>
-              <NavLink to="/cart">Cart</NavLink>
+              <NavLink to="/cart">Cart {cart.length}</NavLink>
             </li>
             <li>
               <NavLink to="/myorder">Orders</NavLink>

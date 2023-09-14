@@ -1,3 +1,5 @@
+
+
 .home-container{
     display: flex;
     margin-top: 100px;
@@ -10,10 +12,11 @@
 }
 
 .home-text h1{
-    font-family: 'Open Sans', sans-serif;
     font-size: 120px;
     font-weight: 500;
     margin: 0;
+    line-height: 1;
+    
 }
 
 .home-text p{
@@ -56,19 +59,13 @@ img{
     margin: 40px 200px;
 }
 
- /* .item{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} */
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 600px;
-  margin: auto;
+  margin-left: 20px;
   margin-bottom: 10px;
   text-align: center;
-  font-family: arial;
+  line-height: 1;
 }
 
 .price {
@@ -99,7 +96,7 @@ img{
 
 .menu-search{
     display: flex;
-    margin-top: 200px;
+    margin-top: 100px;
     margin-left: 220px;
 }
 
@@ -122,22 +119,25 @@ img{
 }
 
 .cart{
-    margin-left: 400px;
+    display: flex;
+    margin-left: 100px;
 }
 
 .cart-container{
     display: flex;
-    justify-content: start;
-    align-items: center;
+    justify-content: flex-start;
+    /* align-items: center; */
     flex-wrap: wrap;
-    margin: 40px auto;
+    flex: 1;
+    width: 70%;
+    margin: 40px ;
 }
 
 .cart-main{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 80%;
     height: 200px;
     display: flex;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -180,12 +180,21 @@ img{
     border: 0;
 }
 
-.cart .cart-total{
-    margin-left: 1600px;
-    margin-right: 700px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.cart .cart-total-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0.3;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 20px;
     width: 20%;
+    position: relative;
+}
+
+.cart .cart-total{
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     font-size: 32px;
 }
 

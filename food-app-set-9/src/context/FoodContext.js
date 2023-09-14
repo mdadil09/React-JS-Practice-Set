@@ -25,8 +25,14 @@ export function FoodProvider({ children }) {
     setCart((cart) => [...cart, product]);
   };
 
+  const removeFromCart = (id) => {
+    const product = cart.filter((item) => item.id !== id);
+    setCart(product);
+  };
   return (
-    <FoodContext.Provider value={{ food, setFood, cart, handleCartUpdate }}>
+    <FoodContext.Provider
+      value={{ food, setFood, cart, handleCartUpdate, removeFromCart }}
+    >
       {children}
     </FoodContext.Provider>
   );
