@@ -50,42 +50,44 @@ const Cart = () => {
             );
           })}
         </div>
-        <div className="cart-total-card">
-          <div className="cart-total">
-            <h3
-              style={{
-                fontSize: "32px",
-                marginLeft: "10px",
-                color: "grey",
-                fontWeight: "400",
-              }}
-            >
-              Price Details
-            </h3>
-            <hr style={{ marginRight: "10px", marginLeft: "10px" }} />
-            <div className="totalPrice">
-              <p style={{ width: "70%" }}>Total Price:</p>
-              <p>${totalPrice}</p>
-            </div>
-            <div className="tax">
-              <p style={{ width: "70%" }}>Tax:</p>
-              <p>${parseInt(tax)}</p>
-            </div>
-            <div className="shipping">
-              <p style={{ width: "70%" }}>Shipping:</p>
-              <p> ${shipping}</p>
-            </div>
-            <hr style={{ marginRight: "10px", marginLeft: "10px" }} />
-            <div className="grand">
-              <p style={{ width: "70%" }}>Grand Total:</p>
-              <p>${parseInt(grandTotal)}</p>
-            </div>
-            <div className="cart-total-button">
-              <p style={{ width: "50%" }}></p>
-              <button>Checkout</button>
+        {cart.length > 0 ? (
+          <div className="cart-total-card">
+            <div className="cart-total">
+              <h3
+                style={{
+                  fontSize: "32px",
+                  marginLeft: "10px",
+                  color: "grey",
+                  fontWeight: "400",
+                }}
+              >
+                Price Details
+              </h3>
+              <hr style={{ marginRight: "10px", marginLeft: "10px" }} />
+              <div className="totalPrice">
+                <p style={{ width: "70%" }}>Total Price:</p>
+                <p>${totalPrice}</p>
+              </div>
+              <div className="tax">
+                <p style={{ width: "70%" }}>Tax:</p>
+                <p>${parseInt(tax)}</p>
+              </div>
+              <div className="shipping">
+                <p style={{ width: "70%" }}>Shipping:</p>
+                <p> ${shipping}</p>
+              </div>
+              <hr style={{ marginRight: "10px", marginLeft: "10px" }} />
+              <div className="grand">
+                <p style={{ width: "70%" }}>Grand Total:</p>
+                <p>${parseInt(grandTotal)}</p>
+              </div>
+              <div className="cart-total-button">
+                <p style={{ width: "50%" }}></p>
+                <button>Checkout</button>
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </>
   );

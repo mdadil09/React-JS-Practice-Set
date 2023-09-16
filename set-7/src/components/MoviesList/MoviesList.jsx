@@ -3,7 +3,7 @@ import { fakeFetch } from "./api";
 
 const MoviesList = () => {
   const [showMovies, setShowMovies] = useState([]);
-  const [moviesInfo, setMoviesInfo] = useState("");
+  const [moviesInfo, setMoviesInfo] = useState(false);
 
   const getMovies = async () => {
     try {

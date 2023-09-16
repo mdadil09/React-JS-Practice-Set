@@ -1,0 +1,36 @@
+
+
+.home-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    opacity: 87%;
+    margin-top: 300px;
+    
+}
+
+.home-container .home-text h1{
+    font-family: 'Mukta','Lobster';
+    font-size: 120px;
+    font-weight: 600;
+    line-height: 0;
+}
+
+.home-container .home-text h3{
+    text-align: center;
+    font-size: 80px;
+}
+
+.home-container .home-text .home-button{
+    text-align: center;
+}
+
+.home-container .home-text .home-button button{
+    width: 300px;
+    font-size: 40px;
+    margin-right: 20px;
+    color: #FFFFFF;
+    padding: 10px;
+
+}

@@ -1,29 +1,25 @@
-import React, { useContext } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navStyle.css";
-import { FoodContext } from "../context/FoodContext";
 
 const Navbar = () => {
-  const { cart } = useContext(FoodContext);
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="logo">Yucha</div>
+        <div className="logo">Tuts.com</div>
         <div className="nav-elements">
           <ul>
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/menu">Menu</NavLink>
+              <NavLink to="/videos">Videos</NavLink>
             </li>
             <li>
-              <NavLink to="/cart">
-                Cart{cart.length >= 1 ? cart.length : ""}
-              </NavLink>
+              <NavLink to="/likedvideos">Liked Videos</NavLink>
             </li>
             <li>
-              <NavLink to="/myorder">Orders</NavLink>
+              <NavLink to="/watchlater">Watch Later</NavLink>
             </li>
           </ul>
         </div>
