@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Mukta:wght@300;400;500;600&family=Open+Sans&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Mukta', 'Lobster';
   background-color: #121212;
 }
 
@@ -26,13 +26,29 @@ body {
   z-index: 2;
 }
 
+
 .logo {
-    text-align: left;
-    font-size: 60px;
-    font-family: "Lucida Handwriting", cursive;
-    margin-right: 1800px;
-    margin-left: 20px;
-    color: #FFFFFF;
+  text-align: left;
+  font-size: 32px;
+  margin-top: 20px;
+  margin-right: 2000px;
+  margin-left: 20px;
+  color: #FFFFFF;
+  width: 42px;
+}
+
+.logo h1{
+  font-weight: 500;
+  margin: 10px;
+  letter-spacing: 3px;
+}
+
+.logo span{
+  background-color: #ff2400 ;
+  padding: 2px;
+  border-radius: 8px;
+  background-size: contain;
+
 }
 
 .nav-elements {
@@ -58,7 +74,7 @@ body {
 }
 
 .nav-elements ul a.active {
-  color: #ff4500;
+  color: #ff2400;
   font-weight: 500;
   position: relative;
 }

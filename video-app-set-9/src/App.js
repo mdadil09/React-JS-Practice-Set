@@ -5,6 +5,7 @@ import Videos from "./Pages/Videos";
 import LikedVideos from "./Pages/LikedVideos";
 import WatchLater from "./Pages/WatchLater";
 import Navbar from "./components/Navbar";
+import SingleVideo from "./Pages/SingleVideo";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/videos" element={<Videos />} />
         <Route path="/likedvideos" element={<LikedVideos />} />
         <Route path="/watchlater" element={<WatchLater />} />
+        <Route path="/singlevideo/:id" element={<SingleVideo />} />
       </Routes>
     </div>
   );

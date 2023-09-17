@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Mukta:wght@300;400;500;600&family=Open+Sans&display=swap');
 
 
 .home-container{
@@ -34,3 +35,143 @@
     padding: 10px;
 
 }
+
+.video-container{
+  margin-top: 100px;
+  margin-left: 250px;
+}
+
+.video-container h1{
+    color: #FFFFFF;
+    opacity: 87%;
+    padding: 20px;
+}
+
+
+.video-card {
+  width: 600px;
+  height: 600px;
+  font-family: 'Mukta', 'Lobster';
+  display: inline-block;
+  flex-direction: column;
+  overflow: hidden;
+  margin-left: 10px;
+}
+.video-card .thumb{
+  height: 56%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.video-card .thumb img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.video-card .details {
+  display: flex;
+  gap: 10px;
+}
+.video-card .channel {
+  flex: 1;
+}
+.video-card .channel img {
+  width: 100%;
+  border-radius: 50%;
+}
+.video-card .info {
+  flex: 6;
+  font-size: 24px;
+  color: grey;
+}
+.video-card .title a {
+  font-size: 40px;
+  color: #FFFFFF;
+  opacity: 87%;
+  font-weight: bold;
+  text-decoration: none;
+}
+.video-card .title {
+  margin-bottom: 10px;
+}
+
+.video-card a {
+  color: grey;
+  text-decoration: none;
+}
+
+.single-container{
+  margin-top: 100px;
+  margin-left: 800px;
+}
+
+ .single-video-card{
+  width: 80%;
+  height: 80%;
+  font-family: 'Mukta', 'Lobster';
+  display: inline-block;
+  flex-direction: column;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.single-video-card .single-one-title{
+  color: #FFFFFF;
+  opacity: 87%;
+  font-size: 40px;
+}
+
+.single-video-card .single-one-title h2{
+  margin: 0;
+  font-weight: 400;
+}
+
+.single-video-card .single-thumb img{
+  height: 1000px;
+  width: 1600px;
+  position: relative;
+}
+
+.single-video-card .single-info{
+  display: flex;
+  margin-top: 20px;
+}
+
+.single-video-card .single-info .single-channel{
+}
+
+.single-video-card .single-info .single-channel img{
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+}
+
+.single-video-card .single-info .single-details{
+  display: flex;
+  gap: 10px;
+}
+
+.single-video-card .single-info .single-details .single-title h3{
+  font-size: 32px;
+  color: #FFFFFF;
+  opacity: 87%;
+  font-weight: 400;
+  text-decoration: none;
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+.single-video-card .single-info .single-details .buttons{
+  margin-left: 480px;
+}
+
+ .single-video-card .single-info .single-details .buttons button{
+  width: 150px;
+  font-size: 32px;
+  padding: 10px;
+  color: #FFFFFF;
+  opacity: 87%;
+  background-color: transparent;
+  border: 1px solid #ff2400 ;
+
+ }

@@ -6,7 +6,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="logo">Tuts.com</div>
+        <div className="logo">
+          <h1>
+            Prog<span>Tutor</span>
+          </h1>
+        </div>
         <div className="nav-elements">
           <ul>
             <li>
