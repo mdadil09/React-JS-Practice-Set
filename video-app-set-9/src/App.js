@@ -16,7 +16,7 @@ function App() {
         <Route path="/videos" element={<Videos />} />
         <Route path="/likedvideos" element={<LikedVideos />} />
         <Route path="/watchlater" element={<WatchLater />} />
-        <Route path="/singlevideo/:id" element={<SingleVideo />} />
+        <Route path="/singlevideo/:id" element={<SingleVideo />} />s
       </Routes>
     </div>
   );

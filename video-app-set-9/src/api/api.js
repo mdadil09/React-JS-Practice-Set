@@ -11,7 +11,7 @@ export const fakeFetch = (url) => {
                 id: 1,
                 title: "Introduction to React",
                 description:
-                  "Learn the basics of React in this introductory tutorial",
+                  "Learn the basics of React in this introductory tutorial. Tired of piecing together disconnected tutorials or dealing with rambling, confusing instructors? This course is for you! It's perfectly structured into a series of bite-sized, easy-to-follow videos that cover both theory and practice.",
                 url: "https://www.youtube.com/watch?v=Ke90Tje7VS0",
                 thumbnail: "https://i.ytimg.com/vi/Ke90Tje7VS0/hqdefault.jpg",
                 duration: "12:35",
@@ -23,7 +23,7 @@ export const fakeFetch = (url) => {
                 id: 2,
                 title: "JavaScript for Beginners",
                 description:
-                  "Get started with JavaScript with this beginner-friendly tutorial",
+                  "Get started with JavaScript with this beginner-friendly tutorial. This complete 134-part JavaScript tutorial for beginners will teach you everything you need to know to get started with the JavaScript programming language.",
                 url: "https://www.youtube.com/watch?v=PkZNo7MFNFg",
                 thumbnail: "https://i.ytimg.com/vi/PkZNo7MFNFg/hqdefault.jpg",
                 duration: "20:17",

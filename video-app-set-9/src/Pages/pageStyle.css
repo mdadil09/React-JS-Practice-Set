@@ -102,7 +102,7 @@
 
 .single-container{
   margin-top: 100px;
-  margin-left: 800px;
+  margin-left: 700px;
 }
 
  .single-video-card{
@@ -173,5 +173,87 @@
   opacity: 87%;
   background-color: transparent;
   border: 1px solid #ff2400 ;
-
+  
  }
+
+ .buttons button:hover{
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+ }
+
+ .single-video-card .single-desc{
+   margin-top: 40px;
+   width: 83%;
+   background-color: hsla(0, 100%, 100%, 0.08);
+	 box-shadow:
+		/* offset-x | offset-y | blur-radius | spread-radius | color */
+		0px 3px 4px 0px hsla(0,0%,0%,0.14), 
+		0px 3px 3px -2px hsla(0,0%,0%,0.12), 
+		0px 1px 8px 0px hsla(0,0%,0%,0.2); 
+    color: #FFFFFF;
+    opacity: 87%;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 400px;
+  }
+
+  .like-container{
+    color: #FFFFFF;
+    opacity: 87%;
+    margin-top: 100px;
+    margin-left: 800px;
+    width: 40%;
+  }
+
+  .like-container h1{
+    font-size: 40px;
+    margin-left: 40px;
+    margin-bottom: 0;
+  }
+
+  .like-container span{
+    font-size: 18px;
+  }
+
+  .like-container .like-list{
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+  }
+
+  .like-container .like-list:hover{
+    background-color: hsla(0, 100%, 100%, 0.08);
+    box-shadow:
+      /* offset-x | offset-y | blur-radius | spread-radius | color */
+      0px 3px 4px 0px hsla(0,0%,0%,0.14), 
+      0px 3px 3px -2px hsla(0,0%,0%,0.12), 
+      0px 1px 8px 0px hsla(0,0%,0%,0.2); 
+      cursor: pointer;
+  }
+
+  .like-container .like-list .like-image img{
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+  }
+
+  .like-container .like-list .like-title{
+    margin-left: 20px;
+  }
+
+  .like-container .like-list .like-title h2{
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  .like-container .like-list .like-title span{
+    font-size: 18px;
+  }
+
+  .like-container .like-list .like-title .like-info{
+    font-size: 18px;
+    padding-top: 5px;
+  }

@@ -6,6 +6,7 @@ export const VideoContext = createContext();
 
 export function VideoProvider({ children }) {
   const [video, setVideo] = useState([]);
+  const [like, setLike] = useState([]);
 
   const getVideos = async () => {
     try {
@@ -19,8 +20,13 @@ export function VideoProvider({ children }) {
   useEffect(() => {
     getVideos();
   }, []);
+
+  const handleLike = (data) => {
+    setLike((video) => [...video, data]);
+  };
+
   return (
-    <VideoContext.Provider value={{ video, setVideo }}>
+    <VideoContext.Provider value={{ video, setVideo, like, handleLike }}>
       {children}
     </VideoContext.Provider>
   );
