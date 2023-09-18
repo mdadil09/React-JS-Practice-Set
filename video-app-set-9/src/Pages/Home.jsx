@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./pageStyle.css";
 
 const Home = () => {
@@ -26,7 +27,12 @@ const Home = () => {
               borderRadius: "8px",
             }}
           >
-            Watch Videos
+            <Link
+              to="/videos"
+              style={{ textDecoration: "none", color: "#FFFFFF" }}
+            >
+              Watch Videos
+            </Link>
           </button>
         </div>
       </div>

@@ -1,12 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router";
 import { VideoContext } from "../context/VideoContext";
+import likeico from "../assests/likeico.png";
+import dislikeico from "../assests/dislikeico.png";
 
 const SingleVideo = () => {
   const { id } = useParams();
-  const { video, handleLike } = useContext(VideoContext);
+  const { video, handleLike, like, handleDislike, handleWatchLater } =
+    useContext(VideoContext);
+
+  const [countDislike, setCountDislike] = useState("");
 
   const filteredVideo = video.find((item) => item.id === parseInt(id, 36));
+
+  const handleClick = () => {
+    handleDislike(filteredVideo.id);
+    setCountDislike(parseInt(countDislike + 1));
+  };
 
   return (
     <div className="single-container">
@@ -36,15 +46,18 @@ const SingleVideo = () => {
                     }}
                     onClick={() => handleLike(filteredVideo)}
                   >
-                    Like
+                    <img src={likeico} alt="like" />{" "}
+                    {like.length > 0 ? like.length : ""}
                   </button>
                   <button
                     style={{
                       borderTopRightRadius: "50px",
                       borderBottomRightRadius: "50px",
                     }}
+                    onClick={handleClick}
                   >
-                    Dislike
+                    <img src={dislikeico} alt="dislike" />{" "}
+                    {like.length === 0 ? countDislike : ""}
                   </button>
                   <button
                     style={{
@@ -52,6 +65,7 @@ const SingleVideo = () => {
                       marginLeft: "20px",
                       borderRadius: "50px",
                     }}
+                    onClick={() => handleWatchLater(filteredVideo)}
                   >
                     Add to watch later
                   </button>

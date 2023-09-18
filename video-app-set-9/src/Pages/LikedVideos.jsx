@@ -5,8 +5,9 @@ const LikedVideos = () => {
   const { like } = useContext(VideoContext);
   return (
     <div className="like-container">
-      <h1>Liked Videos </h1>{" "}
-      <span>{like.length > 0 ? like.length : 0} videos</span>
+      <h1>
+        Liked Videos <span>{like.length > 0 ? like.length : 0} videos</span>
+      </h1>
       <div className="like">
         {like.map((item) => {
           return (

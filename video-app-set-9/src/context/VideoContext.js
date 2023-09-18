@@ -7,6 +7,7 @@ export const VideoContext = createContext();
 export function VideoProvider({ children }) {
   const [video, setVideo] = useState([]);
   const [like, setLike] = useState([]);
+  const [watchLater, setWatchLater] = useState([]);
 
   const getVideos = async () => {
     try {
@@ -25,8 +26,33 @@ export function VideoProvider({ children }) {
     setLike((video) => [...video, data]);
   };
 
+  const handleWatchLater = (data) => {
+    setWatchLater((video) => [...video, data]);
+  };
+
+  const handleDislike = (id) => {
+    const dislike = like.filter((item) => item.id !== id);
+    setLike(dislike);
+  };
+
+  const removeWatch = (id) => {
+    const remove = watchLater.filter((item) => item.id !== id);
+    setWatchLater(remove);
+  };
+
   return (
-    <VideoContext.Provider value={{ video, setVideo, like, handleLike }}>
+    <VideoContext.Provider
+      value={{
+        video,
+        setVideo,
+        like,
+        handleLike,
+        handleDislike,
+        watchLater,
+        handleWatchLater,
+        removeWatch,
+      }}
+    >
       {children}
     </VideoContext.Provider>
   );
