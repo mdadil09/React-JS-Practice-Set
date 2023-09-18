@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { VideoContext } from "../context/VideoContext";
 import likeico from "../assests/likeico.png";
 import dislikeico from "../assests/dislikeico.png";
+import plus from "../assests/plus.png";
 
 const SingleVideo = () => {
   const { id } = useParams();
@@ -56,18 +57,19 @@ const SingleVideo = () => {
                     }}
                     onClick={handleClick}
                   >
-                    <img src={dislikeico} alt="dislike" />{" "}
-                    {like.length === 0 ? countDislike : ""}
+                    <img src={dislikeico} alt="dislike" /> {countDislike}
                   </button>
                   <button
                     style={{
                       width: "300px",
-                      marginLeft: "20px",
+                      marginLeft: "30px",
                       borderRadius: "50px",
+                      textAlign: "center",
                     }}
                     onClick={() => handleWatchLater(filteredVideo)}
                   >
-                    Add to watch later
+                    <img src={plus} alt="plus" style={{ marginRight: "5px" }} />{" "}
+                    Watch later
                   </button>
                 </div>
               </div>

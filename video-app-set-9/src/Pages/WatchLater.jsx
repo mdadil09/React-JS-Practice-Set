@@ -4,7 +4,7 @@ import "./pageStyle.css";
 import remove from "../assests/remove.png";
 
 const WatchLater = () => {
-  const { watchLater } = useContext(VideoContext);
+  const { watchLater, removeWatch } = useContext(VideoContext);
   return (
     <div className="like-container">
       <h1>
@@ -25,7 +25,10 @@ const WatchLater = () => {
                 <div className="like-info">{item.duration}</div>
               </div>
               <div className="remove-button">
-                <img src={remove} alt="remove" />
+                <button onClick={() => removeWatch(item.id)}>
+                  {" "}
+                  <img src={remove} alt="remove" />
+                </button>
               </div>
             </div>
           );

@@ -178,6 +178,7 @@
 
  .buttons button:hover{
   box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  cursor: pointer;
  }
 
  .single-video-card .single-desc{
@@ -241,6 +242,7 @@
 
   .like-container .like-list .like-title{
     margin-left: 20px;
+    width: 50%;
   }
 
   .like-container .like-list .like-title h2{
@@ -256,4 +258,28 @@
   .like-container .like-list .like-title .like-info{
     font-size: 18px;
     padding-top: 5px;
+  }
+
+  .remove-button{
+    margin-left: 240px;
+  }
+
+  .remove-button button{
+    border: none;
+    background-color: transparent;
+  }
+
+  .remove-button button:hover{
+    cursor: pointer;
+  }
+
+  .remove-button img{
+    display: block;
+    height: 32px;
+    width: 32px;
+    opacity: 0;
+  }
+
+  .like-container .like-list:hover img{
+    opacity: 1;
   }
