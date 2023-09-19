@@ -11,7 +11,7 @@ const LikedVideos = () => {
       <div className="like">
         {like.map((item) => {
           return (
-            <div className="like-list">
+            <div className="like-list" key={item.id}>
               <div className="like-image">
                 <img src={item.thumbnail} alt="" />
               </div>

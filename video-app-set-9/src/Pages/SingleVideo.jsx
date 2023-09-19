@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { VideoContext } from "../context/VideoContext";
 import likeico from "../assests/likeico.png";
@@ -10,15 +10,57 @@ const SingleVideo = () => {
   const { video, handleLike, like, handleDislike, handleWatchLater } =
     useContext(VideoContext);
 
+  const [disliked, setDisliked] = useState(false);
+  const [liked, setLiked] = useState(false);
+  const [countLike, setCountLike] = useState("");
   const [countDislike, setCountDislike] = useState("");
 
   const filteredVideo = video.find((item) => item.id === parseInt(id, 36));
 
-  const handleClick = () => {
-    handleDislike(filteredVideo.id);
-    setCountDislike(parseInt(countDislike + 1));
+  useEffect(() => {
+    // Load like and dislike counts from local storage
+    const savedLikedCount = parseInt(localStorage.getItem("countLike")) || "";
+    const savedDislikedCount =
+      parseInt(localStorage.getItem("countDislike")) || "";
+
+    setCountLike(savedLikedCount);
+    setCountDislike(savedDislikedCount);
+  }, []);
+
+  const handleLikeClick = () => {
+    handleLike(filteredVideo);
+    if (!liked) {
+      setLiked(true);
+      setCountLike(parseInt(countLike + 1));
+      if (disliked) {
+        setDisliked(false);
+        setCountDislike(parseInt(countDislike - 1));
+        localStorage.removeItem("disliked");
+        localStorage.removeItem("countDislike");
+      }
+      localStorage.setItem("countLike", "true");
+      localStorage.setItem("countLike", parseInt(countLike + 1));
+    }
   };
 
+  const handleDisLikeClick = () => {
+    handleDislike(filteredVideo.id);
+    if (!disliked) {
+      setDisliked(true);
+      setCountDislike(parseInt(countDislike + 1));
+      if (liked) {
+        setLiked(false);
+        setCountLike(parseInt(countLike - 1));
+        localStorage.removeItem("liked");
+        localStorage.removeItem("countLike");
+      }
+
+      localStorage.setItem("disliked", "true");
+      localStorage.setItem("countDislike", parseInt(countDislike + 1));
+    }
+  };
+
+  console.log(localStorage);
   return (
     <div className="single-container">
       <div className="single-video-container">
@@ -45,17 +87,19 @@ const SingleVideo = () => {
                       borderTopLeftRadius: "50px",
                       borderBottomLeftRadius: "50px",
                     }}
-                    onClick={() => handleLike(filteredVideo)}
+                    disabled={liked === true}
+                    onClick={handleLikeClick}
                   >
                     <img src={likeico} alt="like" />{" "}
-                    {like.length > 0 ? like.length : ""}
+                    {like.length > 0 ? countLike : ""}
                   </button>
                   <button
                     style={{
                       borderTopRightRadius: "50px",
                       borderBottomRightRadius: "50px",
                     }}
-                    onClick={handleClick}
+                    disabled={disliked === true}
+                    onClick={handleDisLikeClick}
                   >
                     <img src={dislikeico} alt="dislike" /> {countDislike}
                   </button>
