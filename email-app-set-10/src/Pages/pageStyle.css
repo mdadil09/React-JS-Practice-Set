@@ -1,0 +1,66 @@
+.container{
+    margin-left: 520px;
+    margin-top: 200px;
+    font-size: 28px; 
+    padding: 0px 10px;
+    position: absolute;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 70%;
+}
+
+.headers{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: 5px solid gray;
+}
+
+.headers .header-text h1{
+    font-size: 40px;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.headers .dropdown{
+    align-items: center;
+    margin-left: 1200px;
+}
+
+.inbox{
+    margin: 10px;
+}
+
+.inbox .inbox-item .card{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 20px;
+    margin-bottom: 5px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.inbox .inbox-item .card h2,p{
+    font-size: 32px;
+    margin: 0;
+}
+
+.inbox .inbox-item .card .buttons{
+    display: flex;
+    margin-top: 5px;
+}
+
+.inbox .inbox-item .card .buttons .button-end{
+    margin-left: 1500px;
+}
+
+button{
+    margin: 5px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+button:hover{
+    cursor: pointer;
+}
