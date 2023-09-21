@@ -4,6 +4,7 @@ import Inbox from "./Pages/Inbox";
 import Spam from "./Pages/Spam";
 import Trash from "./Pages/Trash";
 import SideBar from "./components/SideBar";
+import ViewDetails from "./Pages/ViewDetails";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Inbox />} />
         <Route path="/spam" element={<Spam />} />
         <Route path="/trash" element={<Trash />} />
+        <Route path="/viewdetail/:id" element={<ViewDetails />} />
       </Routes>
     </div>
   );
