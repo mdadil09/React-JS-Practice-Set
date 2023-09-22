@@ -4,6 +4,7 @@ import { MailContext } from "../context/MailContext";
 import { Link } from "react-router-dom";
 
 const Inbox = () => {
+  const { state } = useContext(MailContext);
   return (
     <div className="container">
       <div className="headers">
@@ -22,7 +23,7 @@ const Inbox = () => {
       <div className="inbox">
         <h3>Unread: </h3>
         <div className="inbox-item">
-          {/* {state.mails.map((item) => (
+          {state.mails.map((item) => (
             <div className="card" key={item.mId}>
               <h2>Subject: {item.subject}</h2>
               <p>{item.content}</p>
@@ -43,7 +44,7 @@ const Inbox = () => {
                 </div>
               </div>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
     </div>
