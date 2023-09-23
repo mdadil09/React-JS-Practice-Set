@@ -2,9 +2,21 @@ import React, { useContext, useState } from "react";
 import "./pageStyle.css";
 import { MailContext } from "../context/MailContext";
 import { Link } from "react-router-dom";
+import { CATEGORY } from "../constantType/constantType";
+import MailCard from "../components/MailCard";
 
 const Inbox = () => {
-  const { state } = useContext(MailContext);
+  const { filteredItems, dispatch } = useContext(MailContext);
+
+  const unreadMail = filteredItems.filter((item) => item.unread);
+
+  const handleChange = (e) => {
+    const selectedInput = e.target.value;
+
+    dispatch({ type: CATEGORY, payload: selectedInput });
+  };
+
+  console.log(CATEGORY);
   return (
     <div className="container">
       <div className="headers">
@@ -12,39 +24,34 @@ const Inbox = () => {
           <h1>Md Adil Mail Box</h1>
         </div>
         <div className="dropdown">
-          <button>
-            <input type="checkbox" /> Show Unread Mails
-          </button>
-          <button>
-            <input type="checkbox" /> Show Starred Mails
-          </button>
+          <label htmlFor="show-unread-checkbox">
+            <input
+              id="show-unread-checkbox"
+              type="checkbox"
+              value="show-unread"
+              onChange={handleChange}
+            />
+            Show unread emails
+          </label>
+
+          <label htmlFor="show-starred-checkbox">
+            <input
+              id="show-starred-checkbox"
+              type="checkbox"
+              value="show-starred"
+              onChange={handleChange}
+            />
+            Show starred emails
+          </label>
         </div>
       </div>
       <div className="inbox">
-        <h3>Unread: </h3>
+        <h3>Unread: {unreadMail.length}</h3>
         <div className="inbox-item">
-          {state.mails.map((item) => (
-            <div className="card" key={item.mId}>
-              <h2>Subject: {item.subject}</h2>
-              <p>{item.content}</p>
-
-              <div className="buttons">
-                <button>
-                  <Link
-                    style={{ textDecoration: "none", color: "black" }}
-                    to={`/viewdetail/${item.mId}`}
-                  >
-                    View Details
-                  </Link>
-                </button>
-                <div className="button-end">
-                  <button style={{ color: "red" }}>Delete</button>
-                  <button style={{ color: "#FEBE10" }}>Mark as read</button>
-                  <button style={{ color: "green" }}>Report Spam</button>
-                </div>
-              </div>
-            </div>
-          ))}
+          {filteredItems.map((mail) => {
+            const { mId } = mail;
+            return <MailCard key={mId} mail={mail} />;
+          })}
         </div>
       </div>
     </div>

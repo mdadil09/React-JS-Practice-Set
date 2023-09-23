@@ -116,7 +116,9 @@ export function MailProvider({ children }) {
     trash: [],
   });
 
-  const applyFilter = (mails) => {
+  // console.log(state.selectedCategory);
+
+  const applyFilters = (mails) => {
     let newData = [...mails];
 
     if (state.selectedCategory.length > 0) {
@@ -133,10 +135,11 @@ export function MailProvider({ children }) {
           : newData.filter(({ isStarred }) => isStarred);
       }
     }
+
     return newData;
   };
 
-  const filteredItems = applyFilter(state.updatedMails);
+  const filteredItems = applyFilters(state.updatedMails);
 
   return (
     <MailContext.Provider value={{ state, dispatch, filteredItems }}>
