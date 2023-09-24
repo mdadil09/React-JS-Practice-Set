@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { MailContext } from "../context/MailContext";
+import React from "react";
+import { useMails } from "../context/MailContext";
 import { Link } from "react-router-dom";
 import "../Pages/pageStyle.css";
 
-const MailCard = ({ mail, disable, spam, trash }) => {
-  const { dispatch } = useContext(MailContext);
+export function MailCard({ mail, disable, spam, trash }) {
+  const { dispatch } = useMails();
 
   const { mId, unread, isStarred, subject, content } = mail;
 
@@ -30,6 +30,4 @@ const MailCard = ({ mail, disable, spam, trash }) => {
       </div>
     </div>
   );
-};
-
-export default MailCard;
+}

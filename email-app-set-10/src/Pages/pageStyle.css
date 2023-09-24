@@ -26,6 +26,12 @@
     margin-left: 1200px;
 }
 
+.headers .dropdown input{
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
 .inbox{
     margin: 10px;
 }

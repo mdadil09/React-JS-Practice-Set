@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import { createContext } from "react";
 import { mails } from "../api/api";
 import {
@@ -147,3 +147,5 @@ export function MailProvider({ children }) {
     </MailContext.Provider>
   );
 }
+
+export const useMails = () => useContext(MailContext);

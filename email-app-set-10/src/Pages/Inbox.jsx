@@ -1,22 +1,22 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import "./pageStyle.css";
-import { MailContext } from "../context/MailContext";
-import { Link } from "react-router-dom";
+import { useMails } from "../context/MailContext";
 import { CATEGORY } from "../constantType/constantType";
-import MailCard from "../components/MailCard";
+import { MailCard } from "../components/MailCard";
 
 const Inbox = () => {
-  const { filteredItems, dispatch } = useContext(MailContext);
+  const { filteredItems, dispatch } = useMails();
 
   const unreadMail = filteredItems.filter((item) => item.unread);
 
   const handleChange = (e) => {
     const selectedInput = e.target.value;
 
+    console.log(selectedInput);
+
     dispatch({ type: CATEGORY, payload: selectedInput });
   };
 
-  console.log(CATEGORY);
   return (
     <div className="container">
       <div className="headers">
@@ -30,6 +30,7 @@ const Inbox = () => {
               type="checkbox"
               value="show-unread"
               onChange={handleChange}
+              style={{ marginRight: "10px" }}
             />
             Show unread emails
           </label>

@@ -3,10 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { MailProvider, MailContext } from "./context/MailContext";
+import { MailProvider } from "./context/MailContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-export { MailContext };
 root.render(
   <React.StrictMode>
     <BrowserRouter>
