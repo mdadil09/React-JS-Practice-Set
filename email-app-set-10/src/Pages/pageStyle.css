@@ -70,3 +70,8 @@ button{
 button:hover{
     cursor: pointer;
 }
+
+.card .mail-header{
+    display: flex;
+    justify-content: space-between;
+}

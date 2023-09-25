@@ -9,8 +9,19 @@ export function MailCard({ mail, disable, spam, trash }) {
   const { mId, unread, isStarred, subject, content } = mail;
 
   return (
-    <div className="card" key={mId}>
-      <h2>Subject: {subject}</h2>
+    <div
+      className="card"
+      key={mId}
+      style={{ backgroundColor: unread === false ? "#B2FFFF" : "" }}
+    >
+      <div className="mail-header">
+        <div className="mail-header-text">
+          <h2>Subject: {subject}</h2>
+        </div>
+        <div className="mail-header-img">
+          <button>Star</button>
+        </div>
+      </div>
       <p>{content}</p>
 
       <div className="buttons">

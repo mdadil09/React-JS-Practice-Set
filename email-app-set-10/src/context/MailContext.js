@@ -12,10 +12,10 @@ import {
   STARRED,
   UNSTARRED,
 } from "../constantType/constantType";
-export const MailContext = createContext();
+const MailContext = createContext();
 
 const reducer = (state, action) => {
-  switch (action.types) {
+  switch (action.type) {
     case DELETE_MAIL: {
       const mailID = action.payload;
       const deletedMail = state.mails.find(({ mId }) => mId === mailID);
