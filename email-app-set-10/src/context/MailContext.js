@@ -116,8 +116,6 @@ export function MailProvider({ children }) {
     trash: [],
   });
 
-  // console.log(state.selectedCategory);
-
   const applyFilters = (mails) => {
     let newData = [...mails];
 

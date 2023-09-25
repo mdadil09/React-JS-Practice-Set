@@ -75,3 +75,49 @@ button:hover{
     display: flex;
     justify-content: space-between;
 }
+
+.single-container{
+    margin-left: 520px;
+    margin-top: 200px;
+    font-size: 28px; 
+    position: absolute;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 40%;
+    height: auto;
+}
+
+.single-container .single-card{
+    width: 96.5%;
+    height: auto;
+    padding: 20px;
+    border: 3px dotted black;
+}
+.single-container .single-card p{
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+.single-container .single-card .sub-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.single-container .single-card .sub-header button{
+    font-size: 40px;
+    margin:0.6em 0em 0em 0em;
+}
+
+.single-container .single-card .sub-header h2{
+    font-size: 45px;
+    margin-bottom: 10px;
+} 
+
+.single-container .single-card .button-end{
+    margin-top: 20px;
+    margin-left: 550px;
+}
+
+.single-container .single-card button{
+    font-size: 32px;
+    font-weight: 500;
+}
