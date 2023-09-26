@@ -86,20 +86,22 @@ export function MailCard({ mail, disable, spam, trash }) {
             View Details
           </Link>
         </button>
-        <div className="button-end" onClick={handleClick}>
-          <button value="delete" style={{ color: "red" }}>
-            Delete
-          </button>
-          <button
-            value={unread ? "markasread" : "markasunread"}
-            style={{ color: "#FEBE10" }}
-          >
-            {unread ? "Mark As Read" : "Mark As Unread"}
-          </button>
-          <button value="reportspam" style={{ color: "green" }}>
-            Report Spam
-          </button>
-        </div>
+        {!trash && !spam && (
+          <div className="button-end" onClick={handleClick}>
+            <button value="delete" style={{ color: "red" }}>
+              Delete
+            </button>
+            <button
+              value={unread ? "markasread" : "markasunread"}
+              style={{ color: "#FEBE10" }}
+            >
+              {unread ? "Mark As Read" : "Mark As Unread"}
+            </button>
+            <button value="reportspam" style={{ color: "green" }}>
+              Report Spam
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

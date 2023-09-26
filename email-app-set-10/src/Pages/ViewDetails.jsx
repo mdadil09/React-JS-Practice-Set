@@ -2,103 +2,26 @@ import React from "react";
 import { useParams } from "react-router";
 import "./pageStyle.css";
 import { useMails } from "../context/MailContext";
-import {
-  DELETE_MAIL,
-  MARK_AS_READ,
-  MARK_AS_UNREAD,
-  REPORT_SPAM,
-  STARRED,
-  UNSTARRED,
-} from "../constantType/constantType";
+import SingleCard from "../components/SingleCard";
 
 const ViewDetails = () => {
   const { id } = useParams();
   const {
-    state: { mails },
-    dispatch,
+    state: { mails, trash, spam },
   } = useMails();
 
   const singleItems = mails.find(({ mId }) => mId === id);
+  const emailFoundInTrash = trash.find(({ mId }) => mId === singleItems.mId);
 
-  const { mId, unread, isStarred, subject, content } = singleItems;
-
-  const handleClick = (e) => {
-    const selectedInput = e.target.value;
-
-    switch (selectedInput) {
-      case "delete":
-        dispatch({ type: DELETE_MAIL, payload: mId });
-        break;
-
-      case "markasread":
-        dispatch({ type: MARK_AS_READ, payload: mId });
-        break;
-
-      case "markasunread":
-        dispatch({ type: MARK_AS_UNREAD, payload: mId });
-        break;
-
-      case "reportspam":
-        dispatch({ type: REPORT_SPAM, payload: mId });
-        break;
-
-      default:
-        return;
-    }
-  };
-
-  const handleStarClick = (e) => {
-    const selectedInput = e.target.value;
-
-    switch (selectedInput) {
-      case "star":
-        dispatch({ type: STARRED, payload: mId });
-        break;
-      case "unstar":
-        dispatch({ type: UNSTARRED, payload: mId });
-        break;
-      default:
-        return;
-    }
-  };
+  const emailFoundInSpam = spam.find(({ mId }) => mId === singleItems.mId);
 
   return (
     <div className="single-container">
-      <div className="single-item">
-        {singleItems && (
-          <div
-            className="single-card"
-            style={{
-              backgroundColor: unread === false ? "#B2FFFF" : "",
-            }}
-          >
-            <div className="sub-header">
-              <h2>Subject: {subject}</h2>
-              <button
-                value={isStarred ? "unstar" : "star"}
-                onClick={handleStarClick}
-              >
-                {isStarred ? "⭐" : "☆"}
-              </button>
-            </div>
-            <p>{content}</p>
-            <div className="button-end" onClick={handleClick}>
-              <button value="delete" style={{ color: "red" }}>
-                Delete
-              </button>
-              <button
-                value={unread ? "markasread" : "markasunread"}
-                style={{ color: "#FEBE10" }}
-              >
-                {unread ? "Mark As Read" : "Mark As Unread"}
-              </button>
-              <button value="reportspam" style={{ color: "green" }}>
-                Report Spam
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
+      <SingleCard
+        mail={singleItems}
+        trash={emailFoundInTrash ? true : false}
+        spam={emailFoundInSpam ? true : false}
+      />
     </div>
   );
 };

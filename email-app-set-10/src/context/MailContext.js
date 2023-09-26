@@ -31,8 +31,8 @@ const reducer = (state, action) => {
       const mailID = action.payload;
       const newTrash = state.trash.filter(({ mId }) => mId !== mailID);
       const trashMailID = newTrash.map(({ mId }) => mId);
-      const newUpdatedMail = state.mails.filter(({ mId }) =>
-        trashMailID.includes(mId)
+      const newUpdatedMail = state.mails.filter(
+        ({ mId }) => !trashMailID.includes(mId)
       );
       return { ...state, trash: newTrash, updatedMails: newUpdatedMail };
     }
@@ -52,8 +52,8 @@ const reducer = (state, action) => {
       const mailId = action.payload;
       const newSpam = state.spam.filter(({ mId }) => mId !== mailId);
       const spamMailId = newSpam.map(({ mId }) => mId);
-      const newUpdatedMail = state.mails.filter(({ mId }) =>
-        spamMailId.includes(mId)
+      const newUpdatedMail = state.mails.filter(
+        ({ mId }) => !spamMailId.includes(mId)
       );
 
       return { ...state, spam: newSpam, updatedMails: newUpdatedMail };

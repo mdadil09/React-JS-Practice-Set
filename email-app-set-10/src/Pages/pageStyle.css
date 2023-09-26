@@ -121,3 +121,41 @@ button:hover{
     font-size: 32px;
     font-weight: 500;
 }
+
+.trash-container{
+    margin-left: 520px;
+    margin-top: 200px;
+    font-size: 28px; 
+    position: absolute;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 40%;
+    height: auto;
+}
+
+.spam-container{
+    margin-left: 520px;
+    margin-top: 200px;
+    font-size: 28px; 
+    position: absolute;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 40%;
+    height: auto;
+}
+
+.trshSpamCard{
+    width: 96.5%;
+    height: auto;
+    padding: 20px;
+    border: 3px dotted black;
+}
+
+.trshSpamCard .spamtrashbutton{
+    margin-top: 20px;
+    margin-left: 950px;
+}
+
+.trshSpamCard .spamtrashbutton button{
+    color: green;
+    font-size: 32px;
+    font-weight: 500;
+}
