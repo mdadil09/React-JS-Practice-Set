@@ -10,6 +10,10 @@ const productReducer = (state, action) => {
       return { ...state, sortMethod: action.payload };
     case "OUT_OF_STOCK":
       return { ...state, includeOutOfStock: !state.includeOutOfStock };
+    case "FAST_DELIVERY":
+      return { ...state, includefastDelivery: !state.includefastDelivery };
+    case "SEARCH_BY_NAME":
+      return { ...state, search: state.search };
     default:
       return { ...state };
   }
@@ -19,6 +23,8 @@ export function ProductProvider({ children }) {
   const [state, dispatch] = useReducer(productReducer, {
     sortMethod: "",
     includeOutOfStock: false,
+    includefastDelivery: false,
+    search: "",
   });
 
   const applyFilters = (data) => {
@@ -32,6 +38,14 @@ export function ProductProvider({ children }) {
 
     if (!state.includeOutOfStock) {
       filterData = filterData.filter(({ inStock }) => inStock);
+    }
+
+    if (state.includefastDelivery) {
+      filterData = filterData.filter(({ fastDelivery }) => fastDelivery);
+    }
+
+    if (state.search) {
+      filterData = filterData.filter(({ name }) => name);
     }
 
     return filterData;

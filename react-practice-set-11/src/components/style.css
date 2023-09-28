@@ -1,0 +1,78 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.searchField{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 40%;
+}
+
+.searchField input{
+    width: 80%;
+    height: 40px;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+    margin-right: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.searchField button{
+    width: 150px;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sort-method{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 40%;
+    border: 3px solid lightgray;
+    height: 50px;
+    padding: 10px;
+}
+
+.sort-method label{
+    text-align: center;
+    padding: 10px;
+}
+
+.sort-method h3{
+    text-align: left;
+    margin: 0;
+    padding: 7px;
+}
+
+.filters{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 40%;
+    border: 3px solid lightgray;
+    height: 50px;
+    padding: 10px;
+}
+
+.filters label{
+    text-align: center;
+    padding: 10px;
+}
+
+.filters h3{
+    text-align: left;
+    margin: 0;
+    padding: 7px;
+}
+
+.home{
+    justify-content: center;
+}
