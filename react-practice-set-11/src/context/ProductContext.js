@@ -12,8 +12,10 @@ const productReducer = (state, action) => {
       return { ...state, includeOutOfStock: !state.includeOutOfStock };
     case "FAST_DELIVERY":
       return { ...state, includefastDelivery: !state.includefastDelivery };
-    case "SEARCH_BY_NAME":
-      return { ...state, search: state.search };
+    case "INPUT_VALUE":
+      return { ...state, inputValue: action.payload };
+    case "SEARCH_VALUE":
+      return { ...state, searchValue: action.payload };
     default:
       return { ...state };
   }
@@ -21,10 +23,10 @@ const productReducer = (state, action) => {
 
 export function ProductProvider({ children }) {
   const [state, dispatch] = useReducer(productReducer, {
-    sortMethod: "",
+    inputValue: "",
+    searchValue: "",
     includeOutOfStock: false,
     includefastDelivery: false,
-    search: "",
   });
 
   const applyFilters = (data) => {
@@ -44,19 +46,32 @@ export function ProductProvider({ children }) {
       filterData = filterData.filter(({ fastDelivery }) => fastDelivery);
     }
 
-    if (state.search) {
-      filterData = filterData.filter((item) =>
-        item.name.toLowerCase().includes(state.search.toLowerCase())
-      );
-    }
-
     return filterData;
   };
+
+  const searcFilter = (data) => {
+    let newData = [...data];
+
+    if (state.searchValue.trim().length > 0) {
+      return newData.filter(({ name }) =>
+        name
+          .trim()
+          .toLowerCase()
+          .includes(state.searchValue.trim().toLowerCase())
+      );
+    } else {
+      return newData;
+    }
+  };
+
+  const searchItem = searcFilter(data);
 
   const filteredItem = applyFilters(data);
 
   return (
-    <ProductContext.Provider value={{ filteredItem, state, dispatch }}>
+    <ProductContext.Provider
+      value={{ filteredItem, searchItem, state, dispatch }}
+    >
       {children}
     </ProductContext.Provider>
   );

@@ -4,14 +4,9 @@ import "./style.css";
 
 function TopBar() {
   const {
-    state: { includeOutOfStock, includefastDelivery, search },
+    state: { includeOutOfStock, includefastDelivery, state },
     dispatch,
   } = useContext(ProductContext);
-
-  const handldSearchChange = (e) => {
-    const selectedInput = e.target.value;
-    dispatch({ type: "SEARCH_BY_NAME", payload: selectedInput });
-  };
 
   const handleChange = (e) => {
     const selectedInput = e.target.value;
@@ -22,11 +17,19 @@ function TopBar() {
     <>
       <div className="searchField">
         <input
-          type="search"
+          type="text"
           placeholder="Search by name"
-          onChange={(e) => handldSearchChange(e)}
+          onChange={(e) =>
+            dispatch({ type: "INPUT_VALUE", payload: e.target.value })
+          }
         />
-        <button>Search Data</button>
+        <button
+          onClick={() =>
+            dispatch({ type: "SEARCH_VALUE", payload: state.inputValue })
+          }
+        >
+          Search Data
+        </button>
       </div>
       <div className="sort-method">
         <h3>Sort By:</h3>
