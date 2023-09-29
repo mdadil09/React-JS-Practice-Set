@@ -45,7 +45,9 @@ export function ProductProvider({ children }) {
     }
 
     if (state.search) {
-      filterData = filterData.filter(({ name }) => name);
+      filterData = filterData.filter((item) =>
+        item.name.toLowerCase().includes(state.search.toLowerCase())
+      );
     }
 
     return filterData;
