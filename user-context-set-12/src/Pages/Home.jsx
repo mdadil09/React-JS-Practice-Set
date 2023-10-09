@@ -3,9 +3,9 @@ import { UserContext } from "../context/UserContext";
 
 const Home = () => {
   const { arr, filterItems, handleChange } = useContext(UserContext);
-  console.log(handleChange);
   return (
     <div className="container">
+      <h2>User-Context</h2>
       <select onChange={handleChange}>
         <option value="">All Mentor's</option>
         {arr.map((item) => (

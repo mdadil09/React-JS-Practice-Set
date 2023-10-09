@@ -9,11 +9,11 @@ export function UserProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [transData, setTransData] = useState(translations);
 
-  const transDataMapped = Object.keys(transData);
+  const [language, setLanguage] = useState("en");
 
-  console.log(transDataMapped);
-
-  console.log(transData[transDataMapped].hello);
+  const changeLanguage = (newLang) => {
+    setLanguage(newLang);
+  };
 
   const arr = data.map((item) => item.name);
 
@@ -29,11 +29,19 @@ export function UserProvider({ children }) {
     handleName(e.target.value);
   };
 
-  console.log(arr);
-
   return (
     <UserContext.Provider
-      value={{ data, arr, setData, filterItems, handleName, handleChange }}
+      value={{
+        data,
+        arr,
+        setData,
+        filterItems,
+        handleName,
+        handleChange,
+        transData,
+        language,
+        changeLanguage,
+      }}
     >
       {children}
     </UserContext.Provider>
