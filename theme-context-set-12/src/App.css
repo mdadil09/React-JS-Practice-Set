@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+}
+
+
+.light{
+  background-color: white;
+  color: black;
+}
+
+.dark{
+  background-color: black;
+  color: white;
+}
+.light button{
+  background-color: black;
+  color: white;
+  font-size: 32px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.dark button{
+  background-color: aliceblue;
+  font-size: 32px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.content{
+  text-align: center;
+  height: 100vh;
+  padding-top: 200px;
+}
+
+.content h1,h3,button{
+  margin: 20px;
+}
