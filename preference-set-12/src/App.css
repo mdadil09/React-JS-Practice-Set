@@ -1,5 +1,29 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
-  font-size: 40px;
+  padding: 1rem;
+  height: 100vh;
+}
+
+.light {
+  background-color: #fff;
+  color: #333;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.small {
+  font-size: 0.5rem;
+}
+
+.medium {
+  font-size: 1rem;
+}
+
+.large {
+  font-size: 1.5rem;
 }
 

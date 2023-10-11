@@ -1,32 +1,50 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { UserPreferencesContext } from "../context/UserPreferencesContext ";
 
 const Settings = () => {
+  const { data, handlePref } = useContext(UserPreferencesContext);
   return (
-    <div className="container">
+    <div>
       <h1>Preference Form</h1>
       <div
-        className="select"
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <div
-          className="select1"
-          style={{ marginTop: "100px", padding: "15px" }}
-        >
+        <div style={{ marginTop: "100px", padding: "15px" }}>
           <label style={{ fontSize: "32px" }}>Font Size: </label>
-          <select name="Font Size">
-            <option value="Small">Small</option>
-            <option value="Large">Large</option>
+          <select
+            name="Font Size"
+            onChange={(e) => {
+              handlePref(e.target.value, "font-size");
+            }}
+          >
+            {data.fontSize.map((size, i) => {
+              return (
+                <option value={size} key={i}>
+                  {size}
+                </option>
+              );
+            })}
           </select>
         </div>
-        <div className="select2" style={{ marginTop: "100px" }}>
-          <label style={{ fontSize: "32px" }}>Color Scheme: </label>
-          <select name="Color Scheme">
-            <option value="Light">Light</option>
-            <option value="Dark">Dark</option>
+        <div style={{ marginTop: "100px" }}>
+          <label style={{ fontSize: "32px" }}>Theme: </label>
+          <select
+            name="Font Size"
+            onChange={(e) => {
+              handlePref(e.target.value, "theme");
+            }}
+          >
+            {data.theme.map((theme, i) => {
+              return (
+                <option value={theme} key={i}>
+                  {theme}
+                </option>
+              );
+            })}
           </select>
         </div>
       </div>

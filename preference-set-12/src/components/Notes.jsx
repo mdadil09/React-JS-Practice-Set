@@ -2,7 +2,7 @@ import React from "react";
 
 const Notes = () => {
   return (
-    <div className="container">
+    <div>
       <h1>Notes</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam

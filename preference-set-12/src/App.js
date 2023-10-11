@@ -4,10 +4,16 @@ import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import Notes from "./components/Notes";
 import Settings from "./components/Settings";
+import { useContext } from "react";
+import { UserPreferencesContext } from "./context/UserPreferencesContext ";
 
 function App() {
+  const {
+    preference: { fontSize, theme },
+  } = useContext(UserPreferencesContext);
+
   return (
-    <div className="App">
+    <div className={`App ${fontSize} ${theme}`}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Profile />} />
