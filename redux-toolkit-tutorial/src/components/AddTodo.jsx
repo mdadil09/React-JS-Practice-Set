@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../features/todo/todoSlice";
+import { addTodo, updateTodo } from "../features/todo/todoSlice";
+import PropTypes from "prop-types";
 
-const AddTodo = () => {
-  const [input, setInput] = useState("");
+const AddTodo = ({ onUpdateTodo, updatingTodo }) => {
+  const [input, setInput] = useState(updatingTodo ? updatingTodo.text : "");
   const dispatch = useDispatch();
 
   const addTodoHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
+    if (updatingTodo) {
+      dispatch(updateTodo({ id: updatingTodo.id, text: input }));
+      onUpdateTodo(null);
+    } else {
+      dispatch(addTodo(input));
+    }
     setInput("");
   };
 
@@ -29,10 +35,15 @@ const AddTodo = () => {
         type="submit"
         className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
       >
-        Add Todo
+        {updatingTodo ? "Update Todo" : "Add Todo"}
       </button>
     </form>
   );
+};
+
+AddTodo.propTypes = {
+  onUpdateTodo: PropTypes.func.isRequired,
+  updatingTodo: PropTypes.object,
 };
 
 export default AddTodo;
