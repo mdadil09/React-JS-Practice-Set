@@ -12,3 +12,8 @@ export const getTotalPrice = (cart) => {
   }
   return val.toFixed(2);
 };
+
+export const getFirstLine = (text) => {
+  if (!text) return "";
+  return text.length > 50 ? text.substring(0, 50) + "..." : text;
+};

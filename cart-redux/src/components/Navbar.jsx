@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import "./style.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const [menuActive, setMenuActive] = useState(false);
+  const item = useSelector((state) => state.cart.carts);
+
   return (
     <div className="navbar">
       <a href="#" className="navbar-logo">
-        Your Logo
+        Redux Store
       </a>
-      <div className="hamburger-menu">
-        <span />
-        <span />
-        <span />
+      <div
+        className={`hamburger-menu ${menuActive ? "active" : ""}`}
+        onClick={() => setMenuActive(!menuActive)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <ul className="navbar-menu">
+      <ul className={`navbar-menu ${menuActive ? "active" : ""}`}>
         <li>
           <a href="#">Home</a>
         </li>
@@ -26,11 +34,10 @@ const Navbar = () => {
           <a href="#">Contact</a>
         </li>
       </ul>
-      <div className="cart-icon">
+      <Link className="cart-icon" to="/cart">
         🛒
-        <div className="cart-quantity">3</div>{" "}
-        {/* Replace '3' with the actual quantity */}
-      </div>
+        <div className="cart-quantity">{item.length}</div>{" "}
+      </Link>
     </div>
   );
 };

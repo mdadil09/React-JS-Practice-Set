@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct, setProduct } from "../redux/slice/productSlice";
+import { fetchProduct } from "../redux/slice/productSlice";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Navbar from "./Navbar";
 import { addToCart } from "../redux/slice/cartSlice";
-import { getPriceAfterDiscount } from "../config/config";
+import { getFirstLine, getPriceAfterDiscount } from "../config/config";
+import FeaturedProducts from "./FeaturedProducts";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,6 @@ const Product = () => {
   useEffect(() => {
     dispatch(fetchProduct());
   }, [dispatch]);
-
-  const getFirstLine = (text) => {
-    if (!text) return "";
-    return text.length > 50 ? text.substring(0, 50) + "..." : text;
-  };
 
   const handleAddCart = (item) => {
     dispatch(addToCart(item));
@@ -29,7 +25,10 @@ const Product = () => {
       <Navbar />
       <div className="products">
         <h2>Welcome to redux toolkit store</h2>
-        <h2>Products</h2>
+        <h2>Featured Products</h2>
+        <FeaturedProducts products={products} handleAddCart={handleAddCart} />
+
+        <h2>All Products</h2>
         <div className="products-wrapper">
           {products.map((item) => (
             <div className="product-card" key={item.id}>

@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.carts);
-  console.log(cart);
 
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
@@ -135,7 +134,10 @@ const Cart = () => {
               >
                 <div className="col">TOTAL PRICE</div>
                 <div className="col text-right">
-                  $ {parseFloat(getTotalPrice(cart)) + parseFloat(5)}
+                  ${" "}
+                  {cart.length > 0
+                    ? parseFloat(getTotalPrice(cart)) + parseFloat(5)
+                    : 0.0}
                 </div>
               </div>
               <button className="btn">CHECKOUT</button>
