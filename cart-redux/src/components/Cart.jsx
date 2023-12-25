@@ -9,6 +9,7 @@ import {
 } from "../redux/slice/cartSlice";
 import { getPriceAfterDiscount, getTotalPrice } from "../config/config";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -145,6 +146,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

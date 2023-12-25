@@ -9,9 +9,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a href="#" className="navbar-logo">
+      <Link to="#" className="navbar-logo">
         Redux Store
-      </a>
+      </Link>
       <div
         className={`hamburger-menu ${menuActive ? "active" : ""}`}
         onClick={() => setMenuActive(!menuActive)}
@@ -22,16 +22,16 @@ const Navbar = () => {
       </div>
       <ul className={`navbar-menu ${menuActive ? "active" : ""}`}>
         <li>
-          <a href="#">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#">Shop</a>
+          <Link to="/products">Products</Link>
         </li>
         <li>
-          <a href="#">About</a>
+          <Link to="#">About</Link>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <Link href="#">Contact</Link>
         </li>
       </ul>
       <Link className="cart-icon" to="/cart">

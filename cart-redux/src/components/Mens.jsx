@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getFirstLine, getPriceAfterDiscount } from "../config/config";
 
-const FeaturedProducts = ({ products, handleAddCart }) => {
-  const featuredProducts = products.filter((item) => item.rating >= 4.98);
+const Mens = ({ products, handleAddCart }) => {
+  const filteredProducts = products.filter(
+    (item) =>
+      (item.category === "mens-shirts" || item.category === "mens-shoes") &&
+      item.rating > 4.6
+  );
   return (
     <div className="products-wrapper">
-      {featuredProducts.map((item) => (
+      {filteredProducts.map((item) => (
         <div className="product-card" key={item.id}>
           <div className="product-badge">{item.rating.toFixed(1)} ⭐</div>
           <div className="product-tumb">
@@ -36,4 +40,4 @@ const FeaturedProducts = ({ products, handleAddCart }) => {
   );
 };
 
-export default FeaturedProducts;
+export default Mens;
