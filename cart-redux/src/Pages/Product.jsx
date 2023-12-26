@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import { addToCart } from "../redux/slice/cartSlice";
 import { getFirstLine, getPriceAfterDiscount } from "../config/config";
 import Footer from "../components/Footer";
+import Submenu from "../components/Submenu";
 
 const Product = () => {
   const products = useSelector((state) => state.product.products);
@@ -24,7 +25,7 @@ const Product = () => {
     <>
       <Navbar />
       <div className="products">
-        <h2>All Products</h2>
+        <Submenu />
         <div className="products-wrapper">
           {products.map((item) => (
             <div className="product-card" key={item.id}>

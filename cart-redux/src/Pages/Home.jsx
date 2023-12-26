@@ -12,6 +12,7 @@ import Mens from "../components/Mens";
 import Womens from "../components/Womens";
 import Groceries from "../components/Groceries";
 import Footer from "../components/Footer";
+import HeroCarsoul from "../components/HeroCarsoul";
 
 const Home = () => {
   const products = useSelector((state) => state.product.products);
@@ -28,7 +29,7 @@ const Home = () => {
     <>
       <Navbar />
       <div className="products">
-        <h2>Welcome to redux toolkit store</h2>
+        <HeroCarsoul />
         <h2>Featured Products</h2>
         <FeaturedProducts products={products} handleAddCart={handleAddCart} />
         <h2>Smartphones</h2>

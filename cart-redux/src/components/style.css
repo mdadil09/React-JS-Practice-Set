@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap");
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -21,7 +23,7 @@ a {
 .products-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
 
   padding-top: 10px;
   padding-left: 140px;
@@ -149,10 +151,46 @@ a {
   transition: 0.3s ease;
 }
 
+@media only screen and (max-width: 1200px) {
+  .products-wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .products-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .products-wrapper {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .products-wrapper {
+    display: flex;
+    /* //flex-direction: column; */
+  }
+
+  .product-card {
+    /* width: 100%; */
+    margin: 15px;
+  }
+}
+
+/* Example of using CSS Grid for responsive layout */
+@media only screen and (min-width: 1200px) {
+  .products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px;
   }
 }
 
@@ -630,8 +668,6 @@ button:focus {
   margin-bottom: 5px;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
-
 @media (max-width: 880px) {
   .footer-distributed {
     font: bold 14px sans-serif;
@@ -653,4 +689,179 @@ button:focus {
 .logo {
   height: 10vh;
   width: 10vh;
+}
+
+.hero {
+  background-image: url("../assests/banner-3.png");
+  background-size: cover;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.hero-left-side {
+  padding: 140px;
+}
+
+.hero-text {
+  font-size: 2.5rem;
+  color: hsl(192, 100%, 9%);
+  margin-bottom: 10px;
+}
+
+.hero-secondary-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  background-color: hsl(330, 67%, 1%);
+  border: 0;
+  outline: none;
+  padding: 15px 50px;
+  border-radius: 10rem;
+  color: #fff;
+  font-weight: bold;
+  font-family: "open sans";
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 880px) {
+  .hero {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-left-side {
+    padding: 20px;
+  }
+  .hero-text {
+    font-size: 2rem;
+    color: hsl(192, 100%, 9%);
+    margin-bottom: 10px;
+  }
+
+  .hero-secondary-text {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .hero {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-left-side {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .hero {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-left-side {
+    padding: 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-left-side {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-left-side {
+    padding: 20px;
+  }
+}
+
+.select-menu {
+  width: 380px;
+  margin: 140px auto;
+}
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background: #fff;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.select-btn i {
+  font-size: 25px;
+  transition: 0.3s;
+}
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+.select-menu .options {
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.select-menu.active .options {
+  display: block;
+}
+.options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+.options .option:hover {
+  background: #f2f2f2;
+}
+.option i {
+  font-size: 25px;
+  margin-right: 12px;
+}
+.option .option-text {
+  font-size: 18px;
+  color: #333;
 }
