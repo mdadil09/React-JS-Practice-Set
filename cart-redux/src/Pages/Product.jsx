@@ -25,12 +25,6 @@ const Product = () => {
     dispatch(addToCart(item));
   };
 
-  const filteredProducts = products.filter(
-    (item) => item.category === selectedOption
-  );
-
-  console.log(filteredProducts);
-
   return (
     <>
       <Navbar />
@@ -44,9 +38,10 @@ const Product = () => {
           <AllProducts products={products} handleAddCart={handleAddCart} />
         ) : (
           <FilteredProducts
-            filteredProducts={filteredProducts}
+            products={products}
             handleAddCart={handleAddCart}
-            category={category}
+            //category={category}
+            selectedOption={selectedOption}
           />
         )}
       </div>

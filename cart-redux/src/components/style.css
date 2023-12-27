@@ -60,16 +60,15 @@ a {
   cursor: pointer;
 }
 
-.product-wishlist Icon {
-  box-sizing: border-box;
-  margin: 0;
-  height: 30px;
-  width: 30px;
+.product-wishlist .heart-icon {
   cursor: pointer;
+  color: lightgrey;
 }
 
-.product-wishlist::after {
-  background-color: red;
+.product-wishlist .heart-icon.clicked {
+  color: red;
+  transition: opacity 250ms;
+  outline: none;
 }
 
 .product-tumb {
