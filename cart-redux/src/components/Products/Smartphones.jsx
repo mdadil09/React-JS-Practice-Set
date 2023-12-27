@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getFirstLine, getPriceAfterDiscount } from "../config/config";
+import { getFirstLine, getPriceAfterDiscount } from "../../config/config";
 
-const Groceries = ({ products, handleAddCart }) => {
-  const filteredProducts = products.filter(
-    (item) => item.category === "groceries" && item.rating > 4.5
+const Smartphones = ({ products, handleAddCart }) => {
+  const filteredSmartPhones = products.filter(
+    (item) => item.category === "smartphones" && item.stock > 33
   );
   return (
     <div className="products-wrapper">
-      {filteredProducts.map((item) => (
+      {filteredSmartPhones.map((item) => (
         <div className="product-card" key={item.id}>
           <div className="product-badge">{item.rating.toFixed(1)} ⭐</div>
           <div className="product-tumb">
@@ -38,4 +38,4 @@ const Groceries = ({ products, handleAddCart }) => {
   );
 };
 
-export default Groceries;
+export default Smartphones;

@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import "../components/style.css";
-import FeaturedProducts from "../components/FeaturedProducts";
-import Smartphones from "../components/Smartphones";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../redux/slice/productSlice";
 import { addToCart } from "../redux/slice/cartSlice";
-import Navbar from "../components/Navbar";
-import Watches from "../components/Watches";
-import Laptops from "../components/Laptops";
-import Mens from "../components/Mens";
-import Womens from "../components/Womens";
-import Groceries from "../components/Groceries";
-import Footer from "../components/Footer";
-import HeroCarsoul from "../components/HeroCarsoul";
+import Navbar from "../components/Headers/Navbar";
+import HeroCarsoul from "../components/Headers/HeroCarsoul";
+import FeaturedProducts from "../components/Products/FeaturedProducts";
+import Smartphones from "../components/Products/Smartphones";
+import Watches from "../components/Products/Watches";
+import Laptops from "../components/Products/Laptops";
+import Mens from "../components/Products/Mens";
+import Womens from "../components/Products/Womens";
+import Groceries from "../components/Products/Groceries";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   const products = useSelector((state) => state.product.products);

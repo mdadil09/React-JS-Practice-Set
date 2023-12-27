@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getFirstLine, getPriceAfterDiscount } from "../config/config";
+import { getFirstLine, getPriceAfterDiscount } from "../../config/config";
 
-const Smartphones = ({ products, handleAddCart }) => {
+const Laptops = ({ products, handleAddCart }) => {
   const filteredSmartPhones = products.filter(
-    (item) => item.category === "smartphones" && item.stock > 33
+    (item) => item.category === "laptops" && item.rating >= 4.4
   );
   return (
     <div className="products-wrapper">
@@ -38,4 +38,4 @@ const Smartphones = ({ products, handleAddCart }) => {
   );
 };
 
-export default Smartphones;
+export default Laptops;

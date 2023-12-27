@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getFirstLine, getPriceAfterDiscount } from "../config/config";
+import { getFirstLine, getPriceAfterDiscount } from "../../config/config";
 
 const FeaturedProducts = ({ products, handleAddCart }) => {
   const featuredProducts = products.filter((item) => item.rating >= 4.98);

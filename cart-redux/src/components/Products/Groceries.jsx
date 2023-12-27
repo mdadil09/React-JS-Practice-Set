@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getFirstLine, getPriceAfterDiscount } from "../config/config";
+import { getFirstLine, getPriceAfterDiscount } from "../../config/config";
 
-const Womens = ({ products, handleAddCart }) => {
+const Groceries = ({ products, handleAddCart }) => {
   const filteredProducts = products.filter(
-    (item) =>
-      (item.category === "womens-dresses" ||
-        item.category === "womens-watches") &&
-      item.rating > 4.6
+    (item) => item.category === "groceries" && item.rating > 4.5
   );
   return (
     <div className="products-wrapper">
@@ -41,4 +38,4 @@ const Womens = ({ products, handleAddCart }) => {
   );
 };
 
-export default Womens;
+export default Groceries;

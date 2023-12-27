@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,14 +17,13 @@ const Footer = () => {
             </span>
           </h3>
           <p className="footer-links">
-            <a href="#" className="link-1">
+            <Link to="/" className="link-1">
               Home
-            </a>
-            <a href="#">Seller</a>
-            <a href="#">Pricing</a>
-            <a href="#">About</a>
-            <a href="#">pages</a>
-            <a href="#">Contact</a>
+            </Link>
+            <Link to="/products">Products</Link>
+            <Link to="/cart">Cart</Link>
+            <Link to="/wishlists">Wishlist</Link>
+            <Link to="/orders">Orders</Link>
           </p>
           <p className="footer-company-name">Sell Cart Pvt Ltd © 2015</p>
         </div>
@@ -41,7 +41,7 @@ const Footer = () => {
           <div>
             <i className="fa fa-envelope" />
             <p>
-              <a href="mailto:support@company.com">support@company.com</a>
+              <Link to="mailto:support@company.com">support@company.com</Link>
             </p>
           </div>
         </div>
@@ -53,18 +53,18 @@ const Footer = () => {
             electronic network, primarily the internet.
           </p>
           <div className="footer-icons">
-            <a href="#">
+            <Link to="#">
               <i className="fa fa-facebook" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <i className="fa fa-twitter" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <i className="fa fa-linkedin" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <i className="fa fa-instagram" />
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

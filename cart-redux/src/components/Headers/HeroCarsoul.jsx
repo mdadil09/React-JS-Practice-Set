@@ -1,5 +1,4 @@
 import React from "react";
-import hero from "../assests/4.jpg";
 import { Link } from "react-router-dom";
 
 const HeroCarsoul = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import "./style.css";
+import { Link } from "react-router-dom";
+import "../style.css";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <Link to="#" className="navbar-logo">
+      <Link to="/" className="navbar-logo">
         Redux Store
       </Link>
       <div

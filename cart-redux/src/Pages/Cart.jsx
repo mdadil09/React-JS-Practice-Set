@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct } from "../redux/slice/productSlice";
-import Navbar from "./Navbar";
 import {
   decrementItemInCart,
   incrementItemInCart,
@@ -9,7 +7,8 @@ import {
 } from "../redux/slice/cartSlice";
 import { getPriceAfterDiscount, getTotalPrice } from "../config/config";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import Navbar from "../components/Headers/Navbar";
+import Footer from "../components/Footer/Footer";
 
 const Cart = () => {
   const dispatch = useDispatch();

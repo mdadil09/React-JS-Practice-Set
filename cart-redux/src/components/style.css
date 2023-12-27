@@ -45,9 +45,31 @@ a {
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  background: red;
+  background: green;
   color: #fff;
   padding: 3px 10px;
+  border-radius: 8px;
+}
+
+.product-wishlist {
+  position: absolute;
+  font-size: 18px;
+  left: 90%;
+  right: 0;
+  top: 20px;
+  cursor: pointer;
+}
+
+.product-wishlist Icon {
+  box-sizing: border-box;
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.product-wishlist::after {
+  background-color: red;
 }
 
 .product-tumb {
@@ -810,8 +832,11 @@ button:focus {
 }
 
 .select-menu {
-  width: 380px;
-  margin: 140px auto;
+  position: relative;
+  width: 280px;
+  margin-left: 165px;
+  margin-top: 40px;
+  z-index: 2;
 }
 .select-menu .select-btn {
   display: flex;
@@ -826,24 +851,26 @@ button:focus {
   justify-content: space-between;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-.select-btn i {
+.select-btn .icon {
   font-size: 25px;
   transition: 0.3s;
 }
-.select-menu.active .select-btn i {
+.select-menu.active .select-btn .icon {
   transform: rotate(-180deg);
 }
 .select-menu .options {
-  position: relative;
+  position: absolute;
   padding: 20px;
   margin-top: 10px;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   display: none;
+  z-index: 2;
 }
 .select-menu.active .options {
   display: block;
+  z-index: 2;
 }
 .options .option {
   display: flex;

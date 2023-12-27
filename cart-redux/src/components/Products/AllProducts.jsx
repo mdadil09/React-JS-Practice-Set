@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getFirstLine, getPriceAfterDiscount } from "../config/config";
+import { getFirstLine, getPriceAfterDiscount } from "../../config/config";
+import { Icon } from "@iconify/react";
 
-const Laptops = ({ products, handleAddCart }) => {
-  const filteredSmartPhones = products.filter(
-    (item) => item.category === "laptops" && item.rating >= 4.4
-  );
+const AllProducts = ({ products, handleAddCart }) => {
   return (
     <div className="products-wrapper">
-      {filteredSmartPhones.map((item) => (
+      {products.map((item) => (
         <div className="product-card" key={item.id}>
           <div className="product-badge">{item.rating.toFixed(1)} ⭐</div>
+          <div className="product-wishlist">
+            <Icon icon="bx:heart" />
+          </div>
+
           <div className="product-tumb">
             <img src={item.thumbnail} alt="" />
           </div>
@@ -38,4 +40,4 @@ const Laptops = ({ products, handleAddCart }) => {
   );
 };
 
-export default Laptops;
+export default AllProducts;
