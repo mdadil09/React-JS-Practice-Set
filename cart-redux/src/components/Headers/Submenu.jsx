@@ -27,13 +27,13 @@ const Submenu = ({ category, selectedOption, setSelectedOption }) => {
         <li className="option">
           <span
             className="option-text"
-            onClick={() => handleOptionClick(category.firstVal)}
+            onClick={() => handleOptionClick("All Products")}
           >
             {" "}
-            {category.firstVal}
+            All Products
           </span>
         </li>
-        {category.category.map((item, id) => (
+        {category.map((item, id) => (
           <li
             className="option"
             key={id}

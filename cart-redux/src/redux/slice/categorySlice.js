@@ -1,16 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchCategory = createAsyncThunk("fetchCategory", async () => {
-  try {
-    const res = await axios.get("https://dummyjson.com/products/categories");
-    const data = await res.data;
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 const initialState = {
   firstVal: "All Products",
   category: [],
@@ -38,6 +28,16 @@ const categorySlice = createSlice({
       state.isError = true;
     });
   },
+});
+
+export const fetchCategory = createAsyncThunk("fetchCategory", async () => {
+  try {
+    const res = await axios.get("https://dummyjson.com/products/categories");
+    const data = await res.data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 export const { setCategory } = categorySlice.actions;

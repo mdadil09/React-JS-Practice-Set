@@ -11,9 +11,10 @@ import Footer from "../components/Footer/Footer";
 
 const Product = () => {
   const products = useSelector((state) => state.product.products);
-  const category = useSelector((state) => state.category);
+  const category = useSelector((state) => state.category.category);
   const dispatch = useDispatch();
-  const [selectedOption, setSelectedOption] = useState(category.firstVal);
+  const [selectedOption, setSelectedOption] = useState("All Products");
+  console.log(category);
 
   useEffect(() => {
     dispatch(fetchProduct());

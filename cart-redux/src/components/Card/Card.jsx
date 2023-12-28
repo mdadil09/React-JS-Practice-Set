@@ -24,16 +24,13 @@ const Card = ({ products }) => {
   } = products;
 
   const wishLists = useSelector((state) => state.wishlist.wishlists);
-  const [isClicked, setIsClicked] = useState(false);
 
-  const isInWishlist = wishLists.some((wishlistItem) => wishlistItem.id === id);
+  const isAvailable = wishLists.some((wishlistItem) => wishlistItem.id === id);
 
   const handleToggleWishlist = () => {
-    if (isInWishlist) {
-      setIsClicked(isClicked);
+    if (isAvailable) {
       dispatch(removeFromWishlist(id));
     } else {
-      setIsClicked(!isClicked);
       dispatch(addToWishList(products));
     }
   };
@@ -49,7 +46,7 @@ const Card = ({ products }) => {
         <div className="product-wishlist">
           <FontAwesomeIcon
             icon={faHeart}
-            className={`heart-icon ${isClicked ? "clicked" : ""}`}
+            className={`heart-icon ${isAvailable ? "clicked" : ""}`}
             onClick={handleToggleWishlist}
           />
         </div>

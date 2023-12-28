@@ -6,6 +6,7 @@ import remove from "../assests/remove.png";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import { removeFromWishlist } from "../redux/slice/wishListSlice";
+import { addToCart } from "../redux/slice/cartSlice";
 
 const Wishlist = () => {
   const wishLists = useSelector((state) => state.wishlist.wishlists);
@@ -15,6 +16,10 @@ const Wishlist = () => {
     dispatch(removeFromWishlist(id));
   };
 
+  const handleAddCart = (item) => {
+    dispatch(addToCart(item));
+  };
+
   return (
     <>
       <Navbar />
@@ -22,7 +27,7 @@ const Wishlist = () => {
         <div className="wishList">
           <div className="wish-title">My Wishlist </div>
           {wishLists.map((item) => (
-            <div className="wish-item">
+            <div className="wish-item" key={item.id}>
               <div className="wish-thumb">
                 <img src={item.thumbnail} alt="" />
               </div>
@@ -46,7 +51,9 @@ const Wishlist = () => {
               </div>
               <div className="wish-buttons">
                 <div className="add-button">
-                  <button>Add to Cart</button>
+                  <button onClick={() => handleAddCart(item)}>
+                    Add to Cart
+                  </button>
                 </div>
                 <div className="remove-button">
                   <button onClick={() => handleRemoveWishlist(item.id)}>

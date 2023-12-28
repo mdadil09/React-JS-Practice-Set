@@ -16,7 +16,7 @@ const HeroCarsoul = () => {
             stay ahead in fashion.
           </p>
           <Link style={{ textDecoration: "none" }} to="/products">
-            <button class="hero-btn">Shop Now</button>
+            <button className="hero-btn">Shop Now</button>
           </Link>
         </div>
       </div>
