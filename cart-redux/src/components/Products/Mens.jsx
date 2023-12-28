@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Card/Card";
 
-const Mens = ({ products, handleAddCart }) => {
+const Mens = ({ products }) => {
   const filteredProducts = products.filter(
     (item) =>
       (item.category === "mens-shirts" || item.category === "mens-shoes") &&
@@ -10,7 +10,7 @@ const Mens = ({ products, handleAddCart }) => {
   return (
     <div className="products-wrapper">
       {filteredProducts.map((item) => (
-        <Card products={item} handleAddCart={handleAddCart} />
+        <Card products={item} />
       ))}
     </div>
   );

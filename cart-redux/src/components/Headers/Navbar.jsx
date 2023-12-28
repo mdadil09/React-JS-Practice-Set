@@ -28,10 +28,13 @@ const Navbar = () => {
           <Link to="/products">Products</Link>
         </li>
         <li>
-          <Link to="#">About</Link>
+          <Link to="/wishlist">Wishlist</Link>
         </li>
         <li>
-          <Link href="#">Contact</Link>
+          <Link href="#">My Orders</Link>
+        </li>
+        <li>
+          <Link href="#">About</Link>
         </li>
       </ul>
       <Link className="cart-icon" to="/cart">

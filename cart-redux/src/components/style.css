@@ -891,3 +891,139 @@ button:focus {
   font-size: 18px;
   color: #333;
 }
+
+.wishlist-container {
+  background: white;
+  min-height: 100vh;
+  vertical-align: middle;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.wishList {
+  width: 950px;
+  /* height: auto; */
+  margin: 80px auto;
+  background: #ffffff;
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.wish-title {
+  height: 60px;
+  border-bottom: 1px solid #e1e8ee;
+  padding: 20px 30px;
+  color: #5e6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.wish-item {
+  padding: 20px 30px;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.wish-thumb img {
+  height: 100px;
+  width: 100px;
+}
+
+.wish-title-text {
+  padding-top: 10px;
+  width: 200px;
+}
+
+.wish-title-text span {
+  display: block;
+  font-size: 14px;
+  color: #43484d;
+  font-weight: 400;
+}
+
+.wish-title-text .wish-badge {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  background: green;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.wish-title-text a {
+  text-decoration: none;
+}
+
+.wish-title-text span:hover {
+  color: #fbb72c;
+}
+
+.wish-price {
+  padding-top: 10px;
+}
+
+.wish-buttons {
+  padding-top: 10px;
+  display: flex;
+}
+
+.add-button button {
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: #fbb72c;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.add-button button:hover {
+  background-color: #fbb72c;
+}
+
+.remove-button button {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.remove-button img {
+  height: 16px;
+}
+
+@media (max-width: 800px) {
+  .wishList {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .wish-item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wish-thumb img {
+    width: 100%;
+  }
+  .wish-title-text,
+  .wish-badge,
+  .wish-price,
+  .wish-buttons {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .wish-badge {
+    margin: auto;
+  }
+}

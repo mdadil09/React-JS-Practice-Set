@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../redux/slice/productSlice";
 import "../components/style.css";
-import { addToCart } from "../redux/slice/cartSlice";
 import { fetchCategory } from "../redux/slice/categorySlice";
 import Navbar from "../components/Headers/Navbar";
 import Submenu from "../components/Headers/Submenu";
@@ -21,10 +20,6 @@ const Product = () => {
     dispatch(fetchCategory());
   }, [dispatch]);
 
-  const handleAddCart = (item) => {
-    dispatch(addToCart(item));
-  };
-
   return (
     <>
       <Navbar />
@@ -35,12 +30,10 @@ const Product = () => {
           setSelectedOption={setSelectedOption}
         />
         {selectedOption === "All Products" ? (
-          <AllProducts products={products} handleAddCart={handleAddCart} />
+          <AllProducts products={products} />
         ) : (
           <FilteredProducts
             products={products}
-            handleAddCart={handleAddCart}
-            //category={category}
             selectedOption={selectedOption}
           />
         )}

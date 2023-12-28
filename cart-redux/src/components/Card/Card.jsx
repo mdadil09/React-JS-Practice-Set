@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import { getFirstLine, getPriceAfterDiscount } from "../../config/config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  addToWishList,
+  removeFromWishlist,
+} from "../../redux/slice/wishListSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/slice/cartSlice";
 
-const Card = ({ products, handleAddCart }) => {
+const Card = ({ products }) => {
+  const dispatch = useDispatch();
   const {
     id,
     thumbnail,
@@ -16,11 +23,25 @@ const Card = ({ products, handleAddCart }) => {
     rating,
   } = products;
 
+  const wishLists = useSelector((state) => state.wishlist.wishlists);
   const [isClicked, setIsClicked] = useState(false);
 
-  const handleClick = () => {
-    setIsClicked(!isClicked);
+  const isInWishlist = wishLists.some((wishlistItem) => wishlistItem.id === id);
+
+  const handleToggleWishlist = () => {
+    if (isInWishlist) {
+      setIsClicked(isClicked);
+      dispatch(removeFromWishlist(id));
+    } else {
+      setIsClicked(!isClicked);
+      dispatch(addToWishList(products));
+    }
   };
+
+  const handleAddCart = (item) => {
+    dispatch(addToCart(item));
+  };
+
   return (
     <>
       <div className="product-card" key={id}>
@@ -29,7 +50,7 @@ const Card = ({ products, handleAddCart }) => {
           <FontAwesomeIcon
             icon={faHeart}
             className={`heart-icon ${isClicked ? "clicked" : ""}`}
-            onClick={handleClick}
+            onClick={handleToggleWishlist}
           />
         </div>
 
