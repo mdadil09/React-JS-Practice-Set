@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { getFirstLine, getPriceAfterDiscount } from "../../config/config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -57,7 +57,7 @@ const Card = ({ products }) => {
         <div className="product-details">
           <span className="product-catagory">{category}</span>
           <h4>
-            <Link href="">{title}</Link>
+            <Link to={`/productDetails/${id}`}>{title}</Link>
           </h4>
           <p style={{ fontSize: "8px", margin: 0 }}>
             {getFirstLine(description)}

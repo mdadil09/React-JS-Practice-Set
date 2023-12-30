@@ -140,7 +140,7 @@ const Cart = () => {
                     : 0.0}
                 </div>
               </div>
-              <button className="btn">CHECKOUT</button>
+              <button className="cart-btn">CHECKOUT</button>
             </div>
           </div>
         </div>
