@@ -15,7 +15,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     borderRadius: "16px",
-    background: "var(--light-gohan, #FFF)",
+    background: "#D3D3D3",
     zIndex: "100",
     boxShadow:
       "0px 0px 1px 0px rgba(0, 0, 0, 0.20), 0px 0px 32px -8px rgba(0, 0, 0, 0.12), 0px 32px 32px -8px rgba(0, 0, 0, 0.08)",
@@ -23,18 +23,15 @@ const customStyles = {
 };
 
 const CheckoutPage = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [modal, setModal] = useState(false);
 
-  const handleShowModal = () => {
-    console.log("open");
-    setShowModal(true);
+  const toggleModal = () => {
+    setModal(!modal);
   };
 
-  console.log(showModal);
-
-  const handleClose = () => {
-    setShowModal(false);
-  };
+  // const handleClose = () => {
+  //   setShowModal(false);
+  // };
   return (
     <>
       <Navbar />
@@ -169,7 +166,7 @@ const CheckoutPage = () => {
                             className="btn btn-warning"
                             // data-toggle="modal"
                             // data-target="#staticBackdrop"
-                            onClick={handleShowModal}
+                            onClick={toggleModal}
                           >
                             Pay Now
                           </button>
@@ -183,57 +180,8 @@ const CheckoutPage = () => {
           </div>
         </div>
       </div>
-      <Modal
-        isOpen={showModal}
-        onRequestClose={handleClose}
-        style={customStyles}
-        contentLabel="Example Modal"
-        portalClassName="modal"
-      >
-        <div className="modal-header">
-          <div className="modal-header-text">Add New Profile</div>
-          <button onClick={handleClose}>
-            <img src="" alt="close" />
-          </button>
-        </div>
-        <div className="modal-content">
-          <div className="model-content-header">
-            <div className="model-content-header-1">Basic</div>
-            <div className="model-content-header-2">Contact</div>
-            <div className="header-1-rect"></div>
-            <div className="header-2-rect"></div>
-          </div>
-          <div className="modal-input-title">Enter Name*</div>
-          <input
-            type="text"
-            placeholder="Eg. Jon Doe"
-            // onChange={handleNameChange}
-            // value={name}
-          />
-          <div className="modal-input-title">Enter Email*</div>
-          <input
-            type="text"
-            placeholder="Eg. jondoe@gmail.com"
-            // onChange={handleEmailChange}
-            // value={email}
-          />
-          <div className="modal-input-title">Enter Phone*</div>
-          <input
-            type="text"
-            placeholder="9801916395"
-            // onChange={handleMobileChange}
-            // value={mobile}
-          />
-        </div>
-        <div className="modal-button-container">
-          <button className="button-hidden"></button>
-          <button className="button-visible" onClick={handleClose}>
-            Next
-          </button>
-        </div>
-      </Modal>
 
-      {/* <PaymentModal showModal={showModal} handleClose={handleClose} /> */}
+      <PaymentModal modal={modal} toggleModal={toggleModal} />
       <Footer />
     </>
   );

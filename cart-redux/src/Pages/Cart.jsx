@@ -140,7 +140,10 @@ const Cart = () => {
                     : 0.0}
                 </div>
               </div>
-              <button className="cart-btn">CHECKOUT</button>
+              <Link style={{ textDecoration: "none" }} to="/checkout">
+                {" "}
+                <button className="cart-btn">CHECKOUT</button>
+              </Link>
             </div>
           </div>
         </div>
