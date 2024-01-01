@@ -25,7 +25,7 @@ const customStyles = {
   },
 };
 
-const PaymentModal = ({ modal, toggleModal }) => {
+const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
   const [creditClick, setCreditClick] = useState(true);
   const [googleClick, setGoogleClick] = useState(false);
   const [netClick, setNetClick] = useState(false);
@@ -178,6 +178,7 @@ const PaymentModal = ({ modal, toggleModal }) => {
                   <button
                     type="button"
                     className="subscribe btn btn-primary btn-block shadow-sm"
+                    onClick={() => handleOrders(cart)}
                   >
                     {" "}
                     Confirm Payment{" "}
@@ -203,7 +204,11 @@ const PaymentModal = ({ modal, toggleModal }) => {
                 </div>
                 <p>
                   {" "}
-                  <button type="button" class="btn btn-primary ">
+                  <button
+                    type="button"
+                    class="btn btn-primary "
+                    onClick={() => handleOrders(cart)}
+                  >
                     <FontAwesomeIcon
                       icon={faGooglePay}
                       size="lg"
@@ -241,7 +246,11 @@ const PaymentModal = ({ modal, toggleModal }) => {
               <div className="form-group">
                 <p>
                   {" "}
-                  <button type="button" class="btn btn-primary ">
+                  <button
+                    type="button"
+                    class="btn btn-primary "
+                    onClick={() => handleOrders(cart)}
+                  >
                     <i class="fas fa-mobile-alt mr-2"></i> Proceed Payment
                   </button>{" "}
                 </p>

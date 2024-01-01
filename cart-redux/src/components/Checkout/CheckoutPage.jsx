@@ -2,20 +2,36 @@ import React, { useState } from "react";
 import Navbar from "../Headers/Navbar";
 import Footer from "../Footer/Footer";
 import PaymentModal from "./PaymentModal";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getTotalPrice } from "../../config/config";
+import { addToOrder } from "../../redux/slice/orderSlice";
+import SuccessModal from "./SuccessModal";
 
 const CheckoutPage = () => {
   const [modal, setModal] = useState(false);
+  const [modal1, setModal1] = useState(false);
   const cart = useSelector((state) => state.cart.carts);
+  const dispatch = useDispatch();
 
   const toggleModal = () => {
     setModal(!modal);
   };
 
-  // const handleClose = () => {
-  //   setShowModal(false);
-  // };
+  const toggleModal1 = () => {
+    setModal1(!modal1);
+  };
+
+  const handleCodOrders = (item) => {
+    dispatch(addToOrder(item));
+    toggleModal1();
+  };
+
+  const handleOrders = (item) => {
+    dispatch(addToOrder(item));
+    toggleModal();
+    toggleModal1();
+  };
+
   return (
     <>
       <Navbar />
@@ -135,7 +151,11 @@ const CheckoutPage = () => {
                         >
                           <h6>Cash on Delivery Mode</h6>
                           <hr />
-                          <button type="button" className="btn btn-primary">
+                          <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={() => handleCodOrders(cart)}
+                          >
                             Place Order
                           </button>
                         </div>
@@ -168,7 +188,13 @@ const CheckoutPage = () => {
         </div>
       </div>
 
-      <PaymentModal modal={modal} toggleModal={toggleModal} />
+      <PaymentModal
+        modal={modal}
+        toggleModal={toggleModal}
+        cart={cart}
+        handleOrders={handleOrders}
+      />
+      <SuccessModal modal1={modal1} toggleModal1={toggleModal1} />
       <Footer />
     </>
   );

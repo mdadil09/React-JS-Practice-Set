@@ -1728,3 +1728,65 @@ input[type="radio"] {
     padding: 10px;
   }
 }
+
+.thank-container {
+  height: 50vh;
+  width: 25vw;
+}
+
+.modal-header-thank {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-top: 16px; */
+}
+
+.modal-header-thank button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.modal-cnf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.modal-cnf-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.thank-button {
+  text-align: center;
+}
+
+.thank-button button {
+  background-color: #6fd649;
+  padding: 10px 25px 10px 25px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+.modal-cnf-icon .faCheck {
+  color: #6fd649;
+}
+
+@media (min-width: 520px) and (max-width: 1080px) {
+  .thank-container {
+    height: 40vh;
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .thank-container {
+    height: 40vh;
+    width: 60vw;
+  }
+}

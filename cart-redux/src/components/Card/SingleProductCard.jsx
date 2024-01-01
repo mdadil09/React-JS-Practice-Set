@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { getPriceAfterDiscount } from "../../config/config";
+import { generateStarRating, getPriceAfterDiscount } from "../../config/config";
 
 const SingleProductCard = ({
   singleProduct,
@@ -14,35 +14,6 @@ const SingleProductCard = ({
 
   const handleImageClick = (index) => {
     setMainImage(sliderImageList[index]);
-  };
-
-  const generateStarRating = (rating) => {
-    const filledStars = Array.from(
-      { length: Math.floor(rating) },
-      (_, index) => (
-        <span key={index}>
-          <i className="bx bxs-star" style={{ color: "#ffc600" }} />
-        </span>
-      )
-    );
-
-    const halfStar =
-      rating % 1 !== 0 ? (
-        <span key="half-star">
-          <i className="bx bxs-star-half" style={{ color: "#ffc600" }} />
-        </span>
-      ) : null;
-
-    const emptyStars = Array.from(
-      { length: 5 - Math.ceil(rating) },
-      (_, index) => (
-        <span key={`empty-star-${index}`}>
-          <i className="bx bxs-star" style={{ color: "grey" }} />
-        </span>
-      )
-    );
-
-    return [...filledStars, halfStar, ...emptyStars];
   };
 
   return (
