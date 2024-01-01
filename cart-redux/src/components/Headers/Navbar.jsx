@@ -31,7 +31,7 @@ const Navbar = () => {
           <Link to="/wishlist">Wishlist</Link>
         </li>
         <li>
-          <Link href="#">My Orders</Link>
+          <Link to="/orders">My Orders</Link>
         </li>
         <li>
           <Link href="#">About</Link>

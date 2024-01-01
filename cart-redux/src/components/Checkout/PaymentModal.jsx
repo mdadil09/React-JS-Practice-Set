@@ -229,20 +229,13 @@ const PaymentModal = ({ modal, toggleModal }) => {
                 <label for="Select Your Bank">
                   <h6>Select your Bank</h6>
                 </label>{" "}
-                <select className="form-control" id="ccmonth">
+                <select className="form-control col-md-6" id="ccmonth">
                   <option value="" selected disabled>
                     --Please select your Bank--
                   </option>
-                  <option>Bank 1</option>
-                  <option>Bank 2</option>
-                  <option>Bank 3</option>
-                  <option>Bank 4</option>
-                  <option>Bank 5</option>
-                  <option>Bank 6</option>
-                  <option>Bank 7</option>
-                  <option>Bank 8</option>
-                  <option>Bank 9</option>
-                  <option>Bank 10</option>
+                  <option className="col-md-6">Bank 1</option>
+                  <option className="col-md-6">Bank 2</option>
+                  <option className="col-md-6">Bank 3</option>
                 </select>{" "}
               </div>
               <div className="form-group">

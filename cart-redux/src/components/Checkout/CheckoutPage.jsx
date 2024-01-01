@@ -2,28 +2,12 @@ import React, { useState } from "react";
 import Navbar from "../Headers/Navbar";
 import Footer from "../Footer/Footer";
 import PaymentModal from "./PaymentModal";
-import Modal from "react-modal";
-
-const customStyles = {
-  content: {
-    width: "544px",
-    height: "553px",
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    borderRadius: "16px",
-    background: "#D3D3D3",
-    zIndex: "100",
-    boxShadow:
-      "0px 0px 1px 0px rgba(0, 0, 0, 0.20), 0px 0px 32px -8px rgba(0, 0, 0, 0.12), 0px 32px 32px -8px rgba(0, 0, 0, 0.08)",
-  },
-};
+import { useSelector } from "react-redux";
+import { getTotalPrice } from "../../config/config";
 
 const CheckoutPage = () => {
   const [modal, setModal] = useState(false);
+  const cart = useSelector((state) => state.cart.carts);
 
   const toggleModal = () => {
     setModal(!modal);
@@ -42,7 +26,10 @@ const CheckoutPage = () => {
           <div className="col-md-12 mb-4">
             <div className="shadow bg-white p-3">
               <h4 className="text-dark">
-                Item Total Amount :<span className="float-end">$5454</span>
+                Item Total Amount :
+                <span className="float-end text-success">
+                  ${parseFloat(getTotalPrice(cart)) + parseFloat(5)}
+                </span>
               </h4>
               <hr />
               <small>* Items will be delivered in 3 - 5 days.</small>
