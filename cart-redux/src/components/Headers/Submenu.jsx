@@ -13,7 +13,6 @@ const Submenu = ({ category, selectedOption, setSelectedOption }) => {
     setIsActive(false);
   };
 
-  console.log(selectedOption);
   return (
     <div className={`select-menu ${isActive ? "active" : ""}`}>
       <div className="select-btn" onClick={handleToggle}>

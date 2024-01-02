@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   orders: [],
   cusDetails: [],
+  orderInfo: [],
 };
 
 const orderSlice = createSlice({
@@ -14,6 +15,9 @@ const orderSlice = createSlice({
     },
     addToCusDetails: (state, action) => {
       state.cusDetails.push(action.payload);
+    },
+    addToOrderInfo: (state, action) => {
+      state.orderInfo.push(action.payload);
     },
   },
 });

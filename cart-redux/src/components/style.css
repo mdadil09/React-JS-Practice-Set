@@ -24,6 +24,8 @@ a {
   text-decoration: none;
 }
 
+/* Home-Page */
+
 .products h2 {
   margin-left: 165px;
   margin-top: 40px;
@@ -183,29 +185,45 @@ a {
 
 @media only screen and (max-width: 1200px) {
   .products-wrapper {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 60px;
+    padding-right: 40px;
+    /* justify-content: center; */
+  }
+  .products h2 {
+    text-align: center;
   }
 }
 
 @media only screen and (max-width: 880px) {
   .products-wrapper {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+  }
+  .products h2 {
+    text-align: center;
+    margin-left: 0;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .products-wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+  }
+  .products h2 {
+    text-align: center;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .products-wrapper {
     display: flex;
-    /* //flex-direction: column; */
+    /* flex-direction: column; */
+  }
+  .products h2 {
+    text-align: center;
   }
 
   .product-card {
@@ -214,7 +232,6 @@ a {
   }
 }
 
-/* Example of using CSS Grid for responsive layout */
 @media only screen and (min-width: 1200px) {
   .products-wrapper {
     display: grid;
@@ -231,6 +248,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 
 .navbar-logo {
@@ -245,10 +263,12 @@ a {
   margin: 0;
   padding: 0;
   display: flex;
+  z-index: 10;
 }
 
 .navbar-menu li {
   margin-right: 15px;
+  z-index: 10;
 }
 
 .navbar-menu a {
@@ -900,6 +920,30 @@ button:focus {
 .option .option-text {
   font-size: 18px;
   color: #333;
+}
+
+@media only screen and (max-width: 1200px) {
+  .select-menu {
+    margin-left: 70px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .select-menu {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .select-menu {
+    margin-left: 50px;
+  }
+}
+
+@media (width: 1024px) {
+  .select-menu {
+    margin-left: 100px;
+  }
 }
 
 .wishlist-container {
@@ -1789,4 +1833,42 @@ input[type="radio"] {
     height: 40vh;
     width: 60vw;
   }
+}
+
+/* .paySum-container {
+  background-color: whitesmoke;
+} */
+
+.modal-header-sum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header-sum button {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-header-sum img {
+  height: 18px;
+  width: 18px;
+}
+
+.modal-header-sum .order-summary .pro-summary {
+  margin-top: 20px;
+}
+
+.order-summary h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.user-summary p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 500;
 }

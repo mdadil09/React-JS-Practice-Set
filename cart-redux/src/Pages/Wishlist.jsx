@@ -12,6 +12,8 @@ const Wishlist = () => {
   const wishLists = useSelector((state) => state.wishlist.wishlists);
   const dispatch = useDispatch();
 
+  console.log(wishLists);
+
   const handleRemoveWishlist = (id) => {
     dispatch(removeFromWishlist(id));
   };
@@ -32,8 +34,7 @@ const Wishlist = () => {
                 <img src={item.thumbnail} alt="" />
               </div>
               <div className="wish-title-text">
-                <Link to="">
-                  {" "}
+                <Link to={`/productDetails/${item.id}`}>
                   <span>{item.title}</span>
                 </Link>
                 <span className="wish-badge">{item.rating.toFixed(1)} ⭐</span>

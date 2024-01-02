@@ -43,10 +43,10 @@ const SingleProductCard = ({
               <div className="single-col-6">
                 <div className="breadcrumb">
                   <span>
-                    <Link href="#">Home</Link>
+                    <Link to="/">Home</Link>
                   </span>
                   <span>
-                    <Link href="#">Product</Link>
+                    <Link to="/products">Product</Link>
                   </span>
                   <span className="active">{singleProduct.category}</span>
                 </div>

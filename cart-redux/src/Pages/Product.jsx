@@ -14,7 +14,6 @@ const Product = () => {
   const category = useSelector((state) => state.category.category);
   const dispatch = useDispatch();
   const [selectedOption, setSelectedOption] = useState("All Products");
-  console.log(category);
 
   useEffect(() => {
     dispatch(fetchProduct());
