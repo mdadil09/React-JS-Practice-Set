@@ -1,3 +1,5 @@
+export let cusArr = [];
+
 export const getPriceAfterDiscount = (price, dis) => {
   var p = price - price * (dis / 100);
   return p.toFixed(2);
@@ -42,4 +44,21 @@ export const generateStarRating = (rating) => {
   );
 
   return [...filledStars, halfStar, ...emptyStars];
+};
+
+export const addCusDetails = (
+  nameInput,
+  mobileNoInput,
+  emailInput,
+  pinCodeInput,
+  addressInput
+) => {
+  let cus = {
+    name: nameInput,
+    mobile: mobileNoInput,
+    email: emailInput,
+    pinCode: pinCodeInput,
+    address: addressInput,
+  };
+  cusArr.push(cus);
 };

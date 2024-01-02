@@ -7,6 +7,8 @@ import {
   faMobileScreenButton,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle, faGooglePay } from "@fortawesome/free-brands-svg-icons";
+import { useDispatch } from "react-redux";
+import { addToCusDetails, addToOrder } from "../../redux/slice/orderSlice";
 
 const customStyles = {
   content: {
@@ -25,10 +27,64 @@ const customStyles = {
   },
 };
 
-const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
+const PaymentModal = ({
+  modal,
+  toggleModal,
+  cart,
+  toggleModal1,
+  name,
+  mobile,
+  email,
+  pinCode,
+  address,
+}) => {
+  const dispatch = useDispatch();
   const [creditClick, setCreditClick] = useState(true);
   const [googleClick, setGoogleClick] = useState(false);
   const [netClick, setNetClick] = useState(false);
+  const [cardOwner, setCardOwner] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [cvv, setCvv] = useState("");
+  const [googlePay, setGooglePay] = useState("");
+  const [bankName, setBankName] = useState("--Please select your Bank--");
+
+  const bankArr = [
+    "State Bank of India",
+    "American Bank",
+    "Bank of Baroda",
+    "Axis Bank",
+    "HDFC Bank",
+  ];
+
+  const handleCardOwner = (e) => {
+    setCardOwner(e.target.value);
+  };
+
+  const handleCardNumber = (e) => {
+    setCardNumber(e.target.value);
+  };
+
+  const handleMonth = (e) => {
+    setMonth(e.target.value);
+  };
+
+  const handleYear = (e) => {
+    setYear(e.target.value);
+  };
+
+  const handleCvv = (e) => {
+    setCvv(e.target.value);
+  };
+
+  const handleGoogleChange = (e) => {
+    setGooglePay(e.target.value);
+  };
+
+  const handleBankChange = (e) => {
+    setBankName(e.target.value);
+  };
 
   const handleGoogle = () => {
     setGoogleClick(true);
@@ -50,6 +106,57 @@ const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleCardsOrders = (item) => {
+    if (cardOwner !== "" && cardNumber !== "" && month !== "" && year !== "") {
+      dispatch(addToOrder(item));
+      dispatch(
+        addToCusDetails({
+          name: name,
+          mobile: mobile,
+          email: email,
+          pinCode: pinCode,
+          address: address,
+        })
+      );
+      toggleModal();
+      toggleModal1();
+    }
+  };
+
+  const handleGpayOrders = (item) => {
+    if (googlePay !== "") {
+      dispatch(addToOrder(item));
+      dispatch(
+        addToCusDetails({
+          name: name,
+          mobile: mobile,
+          email: email,
+          pinCode: pinCode,
+          address: address,
+        })
+      );
+      toggleModal();
+      toggleModal1();
+    }
+  };
+
+  const handleBankOrders = (item) => {
+    if (bankName !== "--Please select your Bank--") {
+      dispatch(addToOrder(item));
+      dispatch(
+        addToCusDetails({
+          name: name,
+          mobile: mobile,
+          email: email,
+          pinCode: pinCode,
+          address: address,
+        })
+      );
+      toggleModal();
+      toggleModal1();
+    }
   };
 
   return (
@@ -101,7 +208,9 @@ const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
                     type="text"
                     name="username"
                     placeholder="Card Owner Name"
-                    required=""
+                    value={cardOwner}
+                    onChange={handleCardOwner}
+                    required
                     className="form-control "
                   />{" "}
                 </div>
@@ -116,8 +225,10 @@ const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
                       type="text"
                       name="cardNumber"
                       placeholder="Valid card number"
+                      value={cardNumber}
+                      onChange={handleCardNumber}
                       className="form-control "
-                      required=""
+                      required
                     />
                     <div className="input-group-append">
                       {" "}
@@ -146,14 +257,18 @@ const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
                           placeholder="MM"
                           name=""
                           className="form-control"
-                          required=""
+                          value={month}
+                          onChange={handleMonth}
+                          required
                         />{" "}
                         <input
                           type="number"
                           placeholder="YY"
                           name=""
                           className="form-control"
-                          required=""
+                          value={year}
+                          onChange={handleYear}
+                          required
                         />{" "}
                       </div>
                     </div>
@@ -169,16 +284,22 @@ const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
                           CVV <i className="fa fa-question-circle d-inline" />
                         </h6>
                       </label>{" "}
-                      <input type="text" required="" className="form-control" />{" "}
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        value={cvv}
+                        onChange={handleCvv}
+                      />{" "}
                     </div>
                   </div>
                 </div>
                 <div className="card-footer">
                   {" "}
                   <button
-                    type="button"
+                    type="submit"
                     className="subscribe btn btn-primary btn-block shadow-sm"
-                    onClick={() => handleOrders(cart)}
+                    onClick={() => handleCardsOrders(cart)}
                   >
                     {" "}
                     Confirm Payment{" "}
@@ -188,43 +309,48 @@ const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
             ) : null}
 
             {googleClick === true ? (
-              <div className="gpay" style={{ marginTop: "20px" }}>
-                <div className="form-group col-md-6 ml-n3">
-                  {" "}
-                  <label htmlFor="gpayId">
-                    <h6>Enter Your Google Pay Id</h6>
-                  </label>{" "}
-                  <input
-                    type="text"
-                    name="gpayId"
-                    placeholder="Enter Your Upi No"
-                    required=""
-                    className="form-control "
-                  />{" "}
-                </div>
-                <p>
-                  {" "}
-                  <button
-                    type="button"
-                    class="btn btn-primary "
-                    onClick={() => handleOrders(cart)}
-                  >
-                    <FontAwesomeIcon
-                      icon={faGooglePay}
-                      size="lg"
-                      marginRight="10px"
+              <form>
+                <div className="gpay" style={{ marginTop: "20px" }}>
+                  <div className="form-group col-md-6 ml-n3">
+                    {" "}
+                    <label htmlFor="gpayId">
+                      <h6>Enter Your Google Pay Id</h6>
+                    </label>{" "}
+                    <input
+                      type="text"
+                      name="gpayId"
+                      placeholder="Enter Your Upi No"
+                      required
+                      className="form-control "
+                      value={googlePay}
+                      onChange={handleGoogleChange}
                     />{" "}
-                    Pay Securely
-                  </button>{" "}
-                </p>
-                <p className="text-muted">
-                  {" "}
-                  Note: After clicking on the button, you will be directed to a
-                  secure gateway for payment.<br></br> After completing the
-                  payment process, you will be redirected back to the website to
-                  <br></br>view details of your order.{" "}
-                </p>
-              </div>
+                  </div>
+                  <p>
+                    {" "}
+                    <button
+                      type="submit"
+                      class="btn btn-primary "
+                      onClick={() => handleGpayOrders(cart)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faGooglePay}
+                        size="lg"
+                        marginRight="10px"
+                      />{" "}
+                      Pay Securely
+                    </button>{" "}
+                  </p>
+                  <p className="text-muted">
+                    {" "}
+                    Note: After clicking on the button, you will be directed to
+                    a secure gateway for payment.<br></br> After completing the
+                    payment process, you will be redirected back to the website
+                    to
+                    <br></br>view details of your order.{" "}
+                  </p>
+                </div>
+              </form>
             ) : null}
           </div>
           {netClick === true ? (
@@ -234,22 +360,28 @@ const PaymentModal = ({ modal, toggleModal, cart, handleOrders }) => {
                 <label for="Select Your Bank">
                   <h6>Select your Bank</h6>
                 </label>{" "}
-                <select className="form-control col-md-6" id="ccmonth">
+                <select
+                  className="form-control col-md-6"
+                  id="ccmonth"
+                  onChange={handleBankChange}
+                >
                   <option value="" selected disabled>
-                    --Please select your Bank--
+                    {bankName}
                   </option>
-                  <option className="col-md-6">Bank 1</option>
-                  <option className="col-md-6">Bank 2</option>
-                  <option className="col-md-6">Bank 3</option>
+                  {bankArr.map((item, id) => (
+                    <option className="col-md-6" value={item} key={id}>
+                      {item}
+                    </option>
+                  ))}
                 </select>{" "}
               </div>
               <div className="form-group">
                 <p>
                   {" "}
                   <button
-                    type="button"
+                    type="submit"
                     class="btn btn-primary "
-                    onClick={() => handleOrders(cart)}
+                    onClick={() => handleBankOrders(cart)}
                   >
                     <i class="fas fa-mobile-alt mr-2"></i> Proceed Payment
                   </button>{" "}

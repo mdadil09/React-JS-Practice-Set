@@ -4,17 +4,30 @@ import Footer from "../Footer/Footer";
 import PaymentModal from "./PaymentModal";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotalPrice } from "../../config/config";
-import { addToOrder } from "../../redux/slice/orderSlice";
+import { addToCusDetails, addToOrder } from "../../redux/slice/orderSlice";
 import SuccessModal from "./SuccessModal";
 
 const CheckoutPage = () => {
   const [modal, setModal] = useState(false);
   const [modal1, setModal1] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [address, setAddress] = useState("");
+  const [pinCode, setPinCode] = useState("");
   const cart = useSelector((state) => state.cart.carts);
   const dispatch = useDispatch();
 
   const toggleModal = () => {
-    setModal(!modal);
+    if (
+      name !== "" &&
+      mobile !== "" &&
+      email !== "" &&
+      pinCode !== "" &&
+      address !== ""
+    ) {
+      setModal(!modal);
+    }
   };
 
   const toggleModal1 = () => {
@@ -22,14 +35,49 @@ const CheckoutPage = () => {
   };
 
   const handleCodOrders = (item) => {
-    dispatch(addToOrder(item));
-    toggleModal1();
+    if (
+      name !== "" &&
+      mobile !== "" &&
+      email !== "" &&
+      pinCode !== "" &&
+      address !== ""
+    ) {
+      dispatch(addToOrder(item));
+      dispatch(
+        addToCusDetails({
+          name: name,
+          mobile: mobile,
+          email: email,
+          pinCode: pinCode,
+          address: address,
+        })
+      );
+      toggleModal1();
+    }
   };
 
-  const handleOrders = (item) => {
-    dispatch(addToOrder(item));
-    toggleModal();
-    toggleModal1();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleMobile = (e) => {
+    setMobile(e.target.value);
+  };
+
+  const handleAddress = (e) => {
+    setAddress(e.target.value);
+  };
+
+  const handlePinCode = (e) => {
+    setPinCode(e.target.value);
   };
 
   return (
@@ -57,15 +105,18 @@ const CheckoutPage = () => {
             <div className="shadow bg-white p-3">
               <h4 className="text-dark">Basic Information</h4>
               <hr />
-              <form action="" method="POST">
+              <form action="" onSubmit={handleSubmit} method="post">
                 <div className="row">
                   <div className="col-md-6 mb-3">
                     <label>Full Name</label>
                     <input
                       type="text"
                       name="fullname"
+                      value={name}
+                      onChange={handleName}
                       className="form-control"
                       placeholder="Enter Full Name"
+                      required
                     />
                   </div>
                   <div className="col-md-6 mb-3">
@@ -73,8 +124,11 @@ const CheckoutPage = () => {
                     <input
                       type="number"
                       name="phone"
+                      value={mobile}
+                      onChange={handleMobile}
                       className="form-control"
                       placeholder="Enter Phone Number"
+                      required
                     />
                   </div>
                   <div className="col-md-6 mb-3">
@@ -82,8 +136,11 @@ const CheckoutPage = () => {
                     <input
                       type="email"
                       name="email"
+                      value={email}
+                      onChange={handleEmail}
                       className="form-control"
                       placeholder="Enter Email Address"
+                      required
                     />
                   </div>
                   <div className="col-md-6 mb-3">
@@ -91,8 +148,11 @@ const CheckoutPage = () => {
                     <input
                       type="number"
                       name="pincode"
+                      value={pinCode}
+                      onChange={handlePinCode}
                       className="form-control"
                       placeholder="Enter Pin-code"
+                      required
                     />
                   </div>
                   <div className="col-md-12 mb-3">
@@ -100,8 +160,11 @@ const CheckoutPage = () => {
                     <textarea
                       name="address"
                       className="form-control"
+                      value={address}
+                      onChange={handleAddress}
                       rows={2}
                       defaultValue={""}
+                      required
                     />
                   </div>
                   <div className="col-md-12 mb-3">
@@ -152,7 +215,7 @@ const CheckoutPage = () => {
                           <h6>Cash on Delivery Mode</h6>
                           <hr />
                           <button
-                            type="button"
+                            type="submit"
                             className="btn btn-primary"
                             onClick={() => handleCodOrders(cart)}
                           >
@@ -169,7 +232,7 @@ const CheckoutPage = () => {
                           <h6>Online Payment Mode</h6>
                           <hr />
                           <button
-                            type="button"
+                            type="submit"
                             className="btn btn-warning"
                             // data-toggle="modal"
                             // data-target="#staticBackdrop"
@@ -192,7 +255,12 @@ const CheckoutPage = () => {
         modal={modal}
         toggleModal={toggleModal}
         cart={cart}
-        handleOrders={handleOrders}
+        toggleModal1={toggleModal1}
+        name={name}
+        mobile={mobile}
+        email={email}
+        pinCode={pinCode}
+        address={address}
       />
       <SuccessModal modal1={modal1} toggleModal1={toggleModal1} />
       <Footer />

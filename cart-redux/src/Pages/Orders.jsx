@@ -6,12 +6,15 @@ import { generateStarRating } from "../config/config";
 
 const Orders = () => {
   const orders = useSelector((state) => state.order.orders);
+  const cusDetails = useSelector((state) => state.order.cusDetails);
+  const cart = useSelector((state) => state.cart.carts);
+  const wishLists = useSelector((state) => state.wishlist.wishlists);
 
+  console.log(cusDetails);
   const productObjects = orders.flatMap((innerArray) =>
     innerArray.map((item) => item.product)
   );
 
-  console.log(productObjects);
   return (
     <>
       <Navbar />
@@ -30,7 +33,7 @@ const Orders = () => {
                 />
                 <div className="d-flex align-items-center mt-2">
                   <div className="tag">Orders placed</div>
-                  <div className="ms-auto number">10</div>
+                  <div className="ms-auto number">{orders.length}</div>
                 </div>
               </div>
               <div className="box me-4 my-1 bg-light">
@@ -40,7 +43,7 @@ const Orders = () => {
                 />
                 <div className="d-flex align-items-center mt-2">
                   <div className="tag">Items in Cart</div>
-                  <div className="ms-auto number">10</div>
+                  <div className="ms-auto number">{cart.length}</div>
                 </div>
               </div>
               <div className="box me-4 my-1 bg-light">
@@ -50,7 +53,7 @@ const Orders = () => {
                 />
                 <div className="d-flex align-items-center mt-2">
                   <div className="tag">Wishlist</div>
-                  <div className="ms-auto number">10</div>
+                  <div className="ms-auto number">{wishLists.length}</div>
                 </div>
               </div>
             </div>
