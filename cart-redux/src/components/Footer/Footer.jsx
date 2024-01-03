@@ -22,7 +22,7 @@ const Footer = () => {
             </Link>
             <Link to="/products">Products</Link>
             <Link to="/cart">Cart</Link>
-            <Link to="/wishlists">Wishlist</Link>
+            <Link to="/wishlist">Wishlist</Link>
             <Link to="/orders">Orders</Link>
           </p>
           <p className="footer-company-name">Sell Cart Pvt Ltd © 2015</p>
